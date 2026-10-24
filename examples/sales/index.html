@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier · CRM</title>
+<style>
+:root{--canvas:#f4f3ef;--surface:#fff;--ink:#202a36;--muted:#596675;--line:#d8dde2;--accent:#233f59;--selected:#e8eef3;--success:#285c46;--warning:#9b3d22;--focus:#b65820;--radius:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--canvas);font-size:14px}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}button{cursor:pointer}button,input,select,textarea{border:1px solid #a7b0b9;border-radius:6px;background:#fff;color:var(--ink);min-height:44px;padding:10px 12px}button:hover{background:#eef1f3}button:disabled{opacity:.5;cursor:default}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}button.primary:hover{background:#152e44}button.quiet{border-color:transparent;background:transparent}button.small{padding:6px 10px}a{color:var(--accent)}:focus-visible{outline:3px solid var(--focus);outline-offset:3px}button,a{ -webkit-tap-highlight-color:transparent}h1,h2,h3,p{margin:0}h1{font-size:28px;letter-spacing:-.7px}h2{font-size:23px;letter-spacing:-.4px}h3{font-size:16px}small,.muted{color:var(--muted)}small{font-size:12px}.shell{display:grid;grid-template-columns:216px minmax(0,1fr);min-height:100vh}.sidebar{padding:30px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;background:#eeede8}.brand{display:flex;align-items:center;gap:12px;margin:0 12px 36px;font-size:21px;font-weight:700;letter-spacing:-.8px}.mark{width:26px;height:27px;display:inline-block;border:7px solid var(--accent);border-top-width:3px;transform:skewY(-12deg)}.workspace{margin:0 12px 14px;text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:1.6px;color:var(--muted)}nav{display:grid;gap:4px}nav button{text-align:left;background:transparent;border-color:transparent;font-weight:500}nav button.active{background:#fff;border-color:var(--line);font-weight:650}nav .n{display:inline-flex;margin-right:10px;width:24px;color:var(--muted);font-size:12px;letter-spacing:1px}.aside-foot{margin-top:auto;padding:40px 12px 0;line-height:1.6}.user{display:flex;gap:10px;align-items:center;margin-top:18px}.avatar{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;background:#e2e8eb;color:var(--accent);font-weight:650;font-size:12px}.main{min-width:0;padding:30px 36px 40px;max-width:1640px}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:30px;color:var(--muted);font-size:12px}.locale{padding:6px 10px;min-height:38px}.heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}.heading p{margin-top:8px;color:var(--muted);line-height:1.5}.view{border-bottom:1px solid var(--line);display:flex;gap:22px;margin-bottom:20px}.view span{border-bottom:3px solid var(--accent);padding:0 0 12px;font-weight:650}.view small{padding-top:2px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin-bottom:16px}.toolbar label{display:grid;gap:6px;color:var(--muted);font-size:12px}.toolbar .search{flex:1;min-width:210px}.toolbar input{width:100%}.toolbar select{max-width:190px}.results-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0;font-size:12px;color:var(--muted)}.scope{display:flex;gap:6px;flex-wrap:wrap}.filter-chip{min-height:32px;font-size:12px;padding:4px 9px;background:#e7ecef;border-color:#becbd5}.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto}table{border-collapse:collapse;width:100%;text-align:left;table-layout:fixed}th{font-size:11px;color:var(--muted);font-weight:650;text-transform:uppercase;letter-spacing:.65px;background:#fafbfb;height:44px}td,th{padding:14px 18px;border-bottom:1px solid #e7eaed;overflow-wrap:anywhere}tr:last-child td{border-bottom:0}td{height:79px;line-height:1.5}tbody tr:hover{background:#f9fafb}.identity{display:flex;gap:12px;align-items:center;min-width:0}.identity a{font-weight:650;text-decoration:none}.identity a:hover{text-decoration:underline}.identity small{display:block;margin-top:2px}.badge{display:inline-block;font-size:11px;line-height:1.4;border-radius:4px;padding:4px 7px;font-weight:600;background:#edf0f2;color:#42505f}.badge.client{background:#e5f0e9;color:#285c46}.badge.prospect{background:#eaf0f6;color:#36546e}.badge.partner{background:#f0ebf4;color:#684d7b}.overdue{color:var(--warning);font-size:12px}.due{font-size:12px}.footer{display:flex;justify-content:space-between;gap:14px;align-items:center;padding-top:16px;color:var(--muted);font-size:12px}.pager{display:flex;gap:8px;align-items:center}.empty{background:#fff;border:1px solid var(--line);padding:56px 24px;text-align:center;border-radius:8px}.empty p{margin:10px 0 20px;color:var(--muted)}.activity-list{background:#fff;border:1px solid var(--line);border-radius:8px}.activity-row{display:grid;grid-template-columns:minmax(0,1fr) 110px auto;gap:20px;align-items:center;padding:20px;border-bottom:1px solid var(--line)}.activity-row:last-child{border:0}.activity-row p{margin-top:5px}.activity-row.done h3{text-decoration:line-through;color:var(--muted)}.company-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.company{border:1px solid var(--line);padding:24px;background:white;border-radius:8px}.company .line{display:flex;justify-content:space-between;gap:12px;padding-top:16px;margin-top:16px;border-top:1px solid var(--line)}.company p{margin-top:7px}.money{text-align:right;font-variant-numeric:tabular-nums}.banner{background:#fff2e9;border:1px solid #ce8b60;color:#74300e;padding:12px;margin-bottom:16px;border-radius:6px;line-height:1.5}.banner:empty{display:none}.notice{color:var(--muted);font-size:12px;line-height:1.6;margin-top:24px}.notice details{margin-top:8px}.notice button{margin-top:8px}.status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);background:#233f59;color:white;padding:12px 20px;border-radius:7px;box-shadow:0 4px 20px #0002;z-index:5}.status:empty{display:none}dialog{padding:0;border:1px solid var(--line);border-radius:12px;width:min(560px,calc(100vw - 32px));max-height:calc(100dvh - 32px);color:var(--ink);box-shadow:0 24px 100px #15212e33}dialog::backdrop{background:#17212d61}.dialog-head{padding:24px 26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:start}.dialog-head p{margin-top:7px;color:var(--muted)}.dialog-head .close{font-size:20px;min-width:44px;padding:5px}.dialog-body{padding:24px 26px}.dialog-body section+section{border-top:1px solid var(--line);padding-top:22px;margin-top:24px}.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.properties{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;margin:0}.properties dt{color:var(--muted);font-size:12px}.properties dd{margin:0;overflow-wrap:anywhere}.dialog-actions{display:flex;gap:10px;justify-content:end;padding:18px 26px;border-top:1px solid var(--line);background:#fafbfb}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-grid label{display:grid;gap:7px;font-size:12px;color:var(--muted)}.form-grid input,.form-grid select,.form-grid textarea{width:100%;min-width:0}.full{grid-column:1/-1}.form-error{color:#8c2f16;background:#fff0ea;padding:12px;border-radius:6px;margin-bottom:16px;line-height:1.5}.form-error:empty{display:none}.related{margin-top:12px;display:flex;justify-content:space-between;gap:14px;align-items:center}.related p{font-weight:600}.related small{display:block;margin-top:4px}.draft-note{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.5}.mobile-activity{display:none}.sort-link{border:0;background:none;min-height:30px;padding:0;font:inherit;font-weight:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit}.subtle-row{margin-top:8px;font-size:12px;line-height:1.5}
+@media(max-width:1150px){.shell{grid-template-columns:175px minmax(0,1fr)}.sidebar{padding-inline:10px}.main{padding:24px}.brand{font-size:19px}.col-owner{display:none}th,td{padding:14px}.col-name{width:31%!important}}
+@media(max-width:780px){input,select,textarea{font-size:16px}.shell{display:block}.sidebar{padding:16px;border-right:0;border-bottom:1px solid var(--line)}.brand{margin:0;font-size:20px}.workspace,.aside-foot{display:none}nav{display:flex;margin-top:14px;overflow-x:auto;gap:4px}nav button{white-space:nowrap;padding:8px 10px;min-height:44px}nav .n{display:none}.main{padding:20px 16px 32px}.topline{margin-bottom:22px}.heading{align-items:start}.heading h1{font-size:25px}.heading p{max-width:37ch}.heading .primary{flex:none}.toolbar .search{flex-basis:100%}.toolbar label{flex:1;min-width:115px}.toolbar select{max-width:none;width:100%}.company-grid{grid-template-columns:1fr}.col-company,.col-next{display:none}.col-name{width:68%!important}.col-status{width:32%!important}.identity{align-items:start;gap:10px}.identity .avatar{width:30px;height:30px}.mobile-activity{display:block;font-size:12px;margin-top:6px}.desktop-company{display:none}td{vertical-align:top;padding:16px 12px}.footer{align-items:start;flex-direction:column}.pager{width:100%;justify-content:space-between}.activity-row{grid-template-columns:1fr auto;gap:12px;padding:16px}.activity-row .activity-date{grid-column:1;grid-row:2}.activity-row>button{grid-column:2;grid-row:1/3}.opps-table{min-width:630px}.dialog-body{padding:20px}.dialog-head{padding:20px}.dialog-actions{padding:16px 20px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.properties{grid-template-columns:85px minmax(0,1fr)}.results-meta{align-items:start;flex-direction:column}.heading{flex-wrap:wrap}.heading button{margin-left:auto}}
+@media(prefers-reduced-motion:no-preference){button{transition:background 120ms}dialog[open]{animation:appear 160ms ease-out}@keyframes appear{from{opacity:0}to{opacity:1}}}
+/* Authored dropdown controls; native selects remain hidden data/form backing. */
+select[data-customized]{display:none!important}
+.dropdown-trigger{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;min-height:44px;padding:10px 12px 10px 14px;border:1px solid #a7b0b9;border-radius:7px;background:#fff;box-shadow:0 1px 2px #202a3605;line-height:1.4;font-weight:500;min-width:0;color:var(--ink);cursor:pointer}
+.dropdown-trigger:hover{border-color:#738293;background:#f8fafb}
+.dropdown-trigger[aria-expanded="true"]{border-color:var(--accent);background:#f3f6f8;box-shadow:0 0 0 2px #233f5914}
+.dropdown-value{min-width:0;overflow-wrap:anywhere}
+.dropdown-chevron{display:flex;align-items:center;justify-content:center;flex:none;color:#5a6d7d;border-left:1px solid #dfe4e8;padding-left:10px;margin-left:2px}
+.dropdown-trigger[aria-expanded="true"] .dropdown-chevron svg{transform:rotate(180deg)}
+.dropdown-trigger.locale{min-width:142px;font-size:12px;min-height:40px;padding-block:8px}
+.toolbar .dropdown-trigger{min-width:132px;width:100%;font-size:14px}
+.form-grid .dropdown-trigger{width:100%;font-size:14px;min-width:0}
+td .dropdown-trigger{width:100%;min-width:0;font-size:13px;padding-inline:10px;gap:8px}
+td .dropdown-chevron{padding-left:6px}
+.dropdown-popover{position:fixed;inset:auto;margin:0;padding:6px;border:1px solid #bcc7d0;border-radius:10px;background:#fff;color:var(--ink);box-shadow:0 12px 36px #172b3a26,0 2px 6px #172b3a12;z-index:40;overflow:hidden;font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:left;box-sizing:border-box;max-width:calc(100vw - 16px)}
+.dropdown-popover::backdrop{background:transparent}
+.dropdown-caption{padding:9px 10px 10px;font-size:10px;font-weight:700;line-height:1.3;text-transform:uppercase;letter-spacing:1.1px;color:var(--muted);overflow-wrap:anywhere}
+.dropdown-list{overflow-y:auto;overscroll-behavior:contain;scroll-padding:5px;min-height:0;padding:2px;outline:none;scrollbar-width:thin;scrollbar-color:#a5b2bd transparent}
+.dropdown-list:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:5px}
+.dropdown-option{display:flex;gap:12px;align-items:center;justify-content:space-between;min-height:44px;padding:10px 11px;border-radius:6px;cursor:pointer;border:1px solid transparent;line-height:1.45;color:var(--ink)}
+.dropdown-option-copy{display:grid;gap:2px;min-width:0}.dropdown-option-label{min-width:0;overflow-wrap:anywhere}.dropdown-option-description{font-size:12px;font-weight:400;color:var(--muted);line-height:1.45;overflow-wrap:anywhere}.dropdown-value .dropdown-option-description{display:block;margin-top:3px}
+.dropdown-option[aria-selected="true"]{background:#edf2f6;color:#233f59;font-weight:600}
+.dropdown-option.is-active{background:#e0e9f0;border-color:#9bacbc}
+.dropdown-option[aria-disabled="true"]{opacity:.5;cursor:default}
+.dropdown-check{display:flex;flex:none;width:18px;color:var(--accent);visibility:hidden}
+.dropdown-option[aria-selected="true"] .dropdown-check{visibility:visible}
+.dropdown-search-wrap{padding:0 4px 8px;border-bottom:1px solid #e5e9ed;margin-bottom:4px}
+.dropdown-search{width:100%;min-height:40px;padding:8px 10px;background:#f8fafb;border-color:#c3cdd5;font-size:14px}
+.dropdown-empty{padding:16px 12px;color:var(--muted);font-size:13px}
+@media(max-width:780px){.toolbar .dropdown-trigger{min-width:0;font-size:16px}.form-grid .dropdown-trigger,.dropdown-search{font-size:16px}.dropdown-option{min-height:46px}.dropdown-trigger.locale{min-width:140px}.dropdown-popover{border-radius:9px}}
+@media(prefers-reduced-motion:no-preference){.dropdown-chevron svg{transition:transform 140ms ease}}
+
+</style>
+</head>
+<body>
+<div id="app"></div><dialog id="record" aria-labelledby="dialog-title"></dialog><div id="status" class="status" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+const KEY='atelier-crm-v1', UIKEY=KEY+'-view';
+const words={fr:{contacts:'Contacts',companies:'Entreprises',opportunities:'Opportunités',activities:'Prochaines activités',workspace:'Espace agence',synthetic:'Données de démonstration',desc:'Vos relations, leur contexte et la prochaine conversation.',addContact:'Ajouter un contact',allContacts:'Tous les contacts',local:'Vue personnelle · données locales',search:'Rechercher des contacts',searchHint:'Nom, e-mail ou entreprise…',status:'Relation',owner:'Responsable',language:'Langue',all:'Tous',client:'Client',prospect:'Prospect',partner:'Partenaire',name:'Contact',company:'Entreprise',next:'Prochaine activité',noActivity:'Aucune activité prévue',overdue:'En retard',today:'Aujourd’hui',reset:'Réinitialiser',matches:'contacts correspondants',previous:'Précédent',nextPage:'Suivant',page:'Page',of:'sur',empty:'Aucun contact trouvé',emptyDesc:'Essayez un autre nom ou retirez un filtre.',edit:'Modifier',close:'Fermer',email:'E-mail',phone:'Téléphone',role:'Fonction',notSet:'Non renseigné',details:'Coordonnées',relatedOpps:'Opportunités liées',noOpp:'Aucune opportunité liée.',amount:'Montant',stage:'Étape',discovery:'Découverte',proposal:'Proposition',negotiation:'Négociation',won:'Gagnée',lost:'Perdue',cancel:'Annuler',save:'Enregistrer',newContact:'Nouveau contact',editContact:'Modifier le contact',fullName:'Nom complet',required:'Requis',saved:'Enregistré sur cet appareil.',saveError:'Échec de l’enregistrement. Vos saisies sont conservées. Réessayez.',draft:'Le brouillon est conservé en mémoire si vous fermez ce formulaire.',addActivity:'Ajouter une activité',activityTitle:'Objet du suivi',dueDate:'Date d’échéance',contact:'Contact',complete:'Terminer',undo:'Rétablir',open:'À faire',done:'Terminées',activitiesDesc:'Un suivi clair pour chaque relation. Les dates sont locales.',noTasks:'Aucune activité dans cette vue',noTasksDesc:'Ajoutez un suivi depuis un contact ou ci-dessus.',companiesDesc:'Les entreprises reliées à vos contacts et à vos opportunités.',oppsDesc:'Des dossiers commerciaux reliés à leurs interlocuteurs.',contactsCount:'contacts',openValue:'Opportunités ouvertes',viewContacts:'Voir les contacts',primaryContact:'Contact principal',boundary:'Prototype personnel. Données synthétiques enregistrées dans ce navigateur uniquement ; aucun partage, envoi ni serveur.',demoTools:'Outils de démonstration',failNext:'Simuler un échec au prochain enregistrement',failureArmed:'Le prochain enregistrement échouera volontairement.',storageRead:'Le stockage local est inaccessible ou invalide. Les données de démonstration sont affichées ; les changements restent non enregistrés tant que le stockage échoue.',activityFor:'Suivi pour',draftRecovery:'Brouillon récupéré.',completed:'Activité terminée.',restored:'Activité rétablie.',date:'Échéance',contactDesc:'Créez une relation et attribuez son suivi.',editDesc:'Mettez à jour les informations partagées dans cette vue.',notFound:'Ce contact est introuvable.',contactRequired:'Saisissez un nom et une adresse e-mail valides.',activityRequired:'Saisissez un objet, une date et un contact.',opportunity:'Opportunité',activity:'Activité',due:'À venir',countScope:'Les filtres se combinent avec ET.',noCompany:'Sans entreprise'},en:{contacts:'Contacts',companies:'Companies',opportunities:'Opportunities',activities:'Next activities',workspace:'Agency workspace',synthetic:'Synthetic demo data',desc:'Your relationships, their context, and the next conversation.',addContact:'Add contact',allContacts:'All contacts',local:'Personal view · local data',search:'Search contacts',searchHint:'Name, email or company…',status:'Relationship',owner:'Owner',language:'Language',all:'All',client:'Client',prospect:'Prospect',partner:'Partner',name:'Contact',company:'Company',next:'Next activity',noActivity:'No activity scheduled',overdue:'Overdue',today:'Today',reset:'Reset filters',matches:'matching contacts',previous:'Previous',nextPage:'Next',page:'Page',of:'of',empty:'No contacts found',emptyDesc:'Try another name or remove a filter.',edit:'Edit',close:'Close',email:'Email',phone:'Phone',role:'Role',notSet:'Not set',details:'Contact details',relatedOpps:'Related opportunities',noOpp:'No related opportunities.',amount:'Amount',stage:'Stage',discovery:'Discovery',proposal:'Proposal',negotiation:'Negotiation',won:'Won',lost:'Lost',cancel:'Cancel',save:'Save',newContact:'New contact',editContact:'Edit contact',fullName:'Full name',required:'Required',saved:'Saved on this device.',saveError:'Save failed. Your input is preserved. Please retry.',draft:'Your draft stays in memory if you close this form.',addActivity:'Add activity',activityTitle:'Follow-up subject',dueDate:'Due date',contact:'Contact',complete:'Complete',undo:'Undo',open:'To do',done:'Completed',activitiesDesc:'A clear next step for every relationship. Dates use local time.',noTasks:'No activities in this view',noTasksDesc:'Add a follow-up from a contact or above.',companiesDesc:'The companies connected to your contacts and opportunities.',oppsDesc:'Commercial work connected to the people behind it.',contactsCount:'contacts',openValue:'Open opportunities',viewContacts:'View contacts',primaryContact:'Primary contact',boundary:'Personal prototype. Synthetic data stored only in this browser; no sharing, sending or server.',demoTools:'Demo tools',failNext:'Fail the next save',failureArmed:'The next save will intentionally fail.',storageRead:'Local storage is unavailable or invalid. Showing demo data; changes will remain unsaved while storage fails.',activityFor:'Follow-up for',draftRecovery:'Draft recovered.',completed:'Activity completed.',restored:'Activity restored.',date:'Due',contactDesc:'Create a relationship and assign its follow-up.',editDesc:'Update the information shared across this view.',notFound:'This contact could not be found.',contactRequired:'Enter a name and valid email address.',activityRequired:'Enter a subject, date and contact.',opportunity:'Opportunity',activity:'Activity',due:'Upcoming',countScope:'Filters combine with AND.',noCompany:'No company'}};
+Object.assign(words.fr,{storageUnavailable:'Le stockage est inaccessible. Les données de démonstration restent temporaires.',storageMalformed:'Le contenu enregistré est illisible. Sa version originale est conservée.',storageInvalid:'La structure des données enregistrées est invalide. La version originale est conservée.',storageNewer:'Ces données utilisent une version plus récente non prise en charge.',storageMigration:'La migration des données existantes a échoué. Les données valides restent affichées et la source est conservée.',storageChanged:'Les données enregistrées ont changé depuis leur chargement.',storageBlocked:'Les écritures sont bloquées. Réessayez le chargement ou choisissez une réinitialisation avec copie de sauvegarde.',storageRetry:'Réessayer le chargement',storageReset:'Réinitialiser la démo et garder la source',storageSource:'Télécharger la source enregistrée',storageRecovered:'Démo réinitialisée ; la source originale est sauvegardée séparément.',storageReloaded:'Données rechargées.',viewStorageWarning:'Les préférences de vue ne peuvent pas être enregistrées ; leur valeur originale reste conservée.'});
+Object.assign(words.en,{storageUnavailable:'Storage is unavailable. The displayed demo data is temporary.',storageMalformed:'The saved content is unreadable. Its original bytes are preserved.',storageInvalid:'The saved data has an invalid structure. Its original bytes are preserved.',storageNewer:'This saved data uses an unsupported newer version.',storageMigration:'Migration failed. The valid existing data is still displayed and its source is preserved.',storageChanged:'Saved data changed since it was loaded.',storageBlocked:'Writes are blocked. Retry loading or explicitly reset with a source backup.',storageRetry:'Retry loading',storageReset:'Reset demo and keep saved source',storageSource:'Download saved source',storageRecovered:'Demo reset; original saved bytes are backed up separately.',storageReloaded:'Data reloaded.',viewStorageWarning:'View preferences cannot be saved; their original value is preserved.'});
+Object.assign(words.fr,{interfaceLanguage:'Langue de l’interface',searchChoices:'Rechercher une option…',noChoices:'Aucune option correspondante.'});
+Object.assign(words.en,{interfaceLanguage:'Interface language',searchChoices:'Search choices…',noChoices:'No matching choices.'});
+let failNext=false, noticeTimer, opener, dialogMode='', activeId='', draftMap={}, activityView='open';
+const clone=x=>JSON.parse(JSON.stringify(x));
+function day(offset=0){let d=new Date();d.setDate(d.getDate()+offset);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+const seed={companies:[{id:'co1',name:'Maison Noma',sector:'Design & lifestyle',city:'Douala'},{id:'co2',name:'Horizon Énergie',sector:'Énergie / Energy',city:'Yaoundé'},{id:'co3',name:'Northstar Studio',sector:'Architecture',city:'London'},{id:'co4',name:'Les Jardins du Wouri',sector:'Hospitalité / Hospitality',city:'Douala'},{id:'co5',name:'Kora Collective',sector:'Culture & events',city:'Dakar'}],contacts:[{id:'c1',name:'Amélie Nkomo',email:'amelie.nkomo@example.com',phone:'+237 690 123 456',role:'Directrice marketing',company:'co1',status:'client',owner:'Maya',language:'fr'},{id:'c2',name:'James Walker',email:'james.walker@example.com',phone:'+44 7700 900123',role:'Founding partner',company:'co3',status:'prospect',owner:'Alex',language:'en'},{id:'c3',name:'Sarah Mballa',email:'sarah.mballa@example.com',phone:'+237 691 222 333',role:'Responsable communication',company:'co2',status:'prospect',owner:'Maya',language:'fr'},{id:'c4',name:'Édouard-Marie de La Roche',email:'edouard.delaroche@example.com',phone:'',role:'Directeur des opérations',company:'co4',status:'client',owner:'Alex',language:'fr'},{id:'c5',name:'Fatou Diop',email:'fatou.diop@example.com',phone:'+221 77 000 1122',role:'Creative producer',company:'co5',status:'partner',owner:'Maya',language:'en'},{id:'c6',name:'Daniel Chen',email:'daniel.chen@example.com',phone:'',role:'Project director',company:'co3',status:'client',owner:'Alex',language:'en'},{id:'c7',name:'Amélie Nkomo',email:'amelie.finance@example.com',phone:'+237 692 444 555',role:'Finance & procurement',company:'co2',status:'partner',owner:'Maya',language:'fr'},{id:'c8',name:'Olivier Talla',email:'olivier.talla@example.com',phone:'+237 693 555 111',role:'Consultant indépendant',company:'',status:'prospect',owner:'Alex',language:'fr'}],opportunities:[{id:'o1',name:'Identité de marque / Brand identity',company:'co1',contact:'c1',amount:14500,stage:'proposal'},{id:'o2',name:'Website & launch campaign',company:'co3',contact:'c2',amount:24000,stage:'discovery'},{id:'o3',name:'Communication institutionnelle',company:'co2',contact:'c3',amount:18000,stage:'negotiation'},{id:'o4',name:'Expérience digitale / Digital experience',company:'co4',contact:'c4',amount:9200,stage:'won'}],activities:[{id:'a1',contact:'c1',title:'Valider le périmètre de la proposition',date:day(-2),done:false},{id:'a2',contact:'c2',title:'Discuss website discovery workshop',date:day(0),done:false},{id:'a3',contact:'c3',title:'Envoyer les références de campagne',date:day(1),done:false},{id:'a4',contact:'c4',title:'Point de lancement du projet',date:day(3),done:false},{id:'a5',contact:'c5',title:'Review partnership ideas',date:day(-5),done:true}]};
+// STORAGE_LOGIC_START — shared verbatim with the Node verification harness.
+function createAtelierStorage(storage, key, fixtures) {
+  const copy = value => JSON.parse(JSON.stringify(value));
+  const plain = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+  const idOK = value => typeof value === 'string' && /^[A-Za-z][A-Za-z0-9_-]*$/.test(value);
+  const text = (value, required = false) => typeof value === 'string' && (!required || value.trim().length > 0);
+  const dateOK = value => {
+    if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value) || value.startsWith('0000')) return false;
+    const date = new Date(value + 'T12:00:00Z');
+    return Number.isFinite(date.valueOf()) && date.toISOString().slice(0, 10) === value;
+  };
+  function validate(data) {
+    if (!plain(data)) throw Error('data-object');
+    const ids = new Set();
+    for (const collection of ['companies', 'contacts', 'opportunities', 'activities']) {
+      if (!Array.isArray(data[collection])) throw Error('collection-' + collection);
+      for (const record of data[collection]) {
+        if (!plain(record) || !idOK(record.id) || ids.has(record.id)) throw Error('record-id-' + collection);
+        ids.add(record.id);
+      }
+    }
+    const companyIds = new Set(data.companies.map(record => record.id));
+    const contactIds = new Set(data.contacts.map(record => record.id));
+    for (const record of data.companies) {
+      if (!text(record.name, true) || !text(record.sector) || !text(record.city)) throw Error('company-fields');
+    }
+    for (const record of data.contacts) {
+      if (!text(record.name, true) || !text(record.email, true) || !/^[^\s@]+@[^\s@]+$/.test(record.email) ||
+          !text(record.phone) || !text(record.role) || !text(record.company) ||
+          (record.company !== '' && !companyIds.has(record.company)) ||
+          !['client', 'prospect', 'partner'].includes(record.status) ||
+          !['Maya', 'Alex'].includes(record.owner) || !['fr', 'en'].includes(record.language)) throw Error('contact-fields-or-relation');
+    }
+    for (const record of data.opportunities) {
+      if (!text(record.name, true) || !companyIds.has(record.company) || !contactIds.has(record.contact) ||
+          typeof record.amount !== 'number' || !Number.isFinite(record.amount) || record.amount < 0 ||
+          !['discovery', 'proposal', 'negotiation', 'won', 'lost'].includes(record.stage)) throw Error('opportunity-fields-or-relation');
+    }
+    for (const record of data.activities) {
+      if (!text(record.title, true) || !contactIds.has(record.contact) || !dateOK(record.date) || typeof record.done !== 'boolean') throw Error('activity-fields-or-relation');
+    }
+    return true;
+  }
+  validate(fixtures);
+  let state;
+  function backup(raw, label) {
+    let suffix = 0;
+    while (true) {
+      const backupKey = key + ':' + label + (suffix ? ':' + suffix : '');
+      const existing = storage.getItem(backupKey);
+      if (existing === raw) return backupKey;
+      if (existing === null) { storage.setItem(backupKey, raw); return backupKey; }
+      suffix += 1;
+    }
+  }
+  function envelope(data) { return JSON.stringify({schemaVersion: 1, data}); }
+  function load() {
+    state = {status: 'first-use', writable: true, data: copy(fixtures), originalRaw: null, expectedRaw: null, backupKey: null, error: ''};
+    let raw;
+    try { raw = storage.getItem(key); } catch (error) {
+      Object.assign(state, {status: 'unavailable', writable: false, error: String(error.message || error)}); return state;
+    }
+    state.originalRaw = state.expectedRaw = raw;
+    if (raw === null) return state;
+    let parsed;
+    try { parsed = JSON.parse(raw); } catch {
+      Object.assign(state, {status: 'malformed', writable: false}); return state;
+    }
+    let legacy = false;
+    if (plain(parsed) && Object.prototype.hasOwnProperty.call(parsed, 'schemaVersion')) {
+      if (parsed.schemaVersion !== 1) {
+        Object.assign(state, {status: Number.isInteger(parsed.schemaVersion) && parsed.schemaVersion > 1 ? 'newer' : 'invalid', writable: false}); return state;
+      }
+    } else legacy = true;
+    const data = legacy ? parsed : parsed.data;
+    try { validate(data); } catch (error) {
+      Object.assign(state, {status: 'invalid', writable: false, error: error.message}); return state;
+    }
+    state.data = copy(data);
+    if (!legacy) { state.status = 'valid'; return state; }
+    // Keep exact legacy bytes before any migration write. A failed backup or
+    // write leaves the main key untouched, with valid legacy data still shown.
+    try {
+      state.backupKey = backup(raw, 'legacy-source');
+      const migrated = envelope(data);
+      storage.setItem(key, migrated);
+      state.expectedRaw = migrated;
+      state.status = 'migrated';
+    } catch (error) {
+      Object.assign(state, {status: 'migration-failed', writable: false, error: String(error.message || error)});
+    }
+    return state;
+  }
+  function commit(data) {
+    if (!state.writable) return {ok: false, reason: 'blocked'};
+    try { validate(data); } catch (error) { return {ok: false, reason: 'invalid-mutation', error: error.message}; }
+    try {
+      const current = storage.getItem(key);
+      if (current !== state.expectedRaw) {
+        Object.assign(state, {status: 'changed', writable: false, originalRaw: current});
+        return {ok: false, reason: 'changed'};
+      }
+      const raw = envelope(data);
+      storage.setItem(key, raw);
+      state.data = copy(data);
+      state.expectedRaw = raw;
+      state.status = 'valid';
+      return {ok: true};
+    } catch (error) { return {ok: false, reason: 'rejected', error: String(error.message || error)}; }
+  }
+  function reset() {
+    // This is called only by the explicitly labeled recovery button. Never
+    // replace an existing value unless its exact bytes are safely backed up.
+    try {
+      const current = storage.getItem(key);
+      const backupKey = current === null ? null : backup(current, 'recovery-source');
+      const raw = envelope(fixtures);
+      storage.setItem(key, raw);
+      Object.assign(state, {status: 'recovered', writable: true, data: copy(fixtures), expectedRaw: raw, originalRaw: current, backupKey, error: ''});
+      return {ok: true, backupKey};
+    } catch (error) { return {ok: false, reason: 'recovery-rejected', error: String(error.message || error)}; }
+  }
+  load();
+  return {get state() { return state; }, validate, commit, reset, reload: load};
+}
+// STORAGE_LOGIC_END
+const recordStore = createAtelierStorage({getItem:key=>window.localStorage.getItem(key),setItem:(key,value)=>window.localStorage.setItem(key,value)}, KEY, seed);
+let db = recordStore.state.data;
+let ui={lang:'fr',page:'contacts',q:'',status:'',owner:'',language:'',sort:'asc',p:1};
+let viewWritable=true;
+try {
+  const raw=localStorage.getItem(UIKEY);
+  if(raw!==null){
+    const saved=JSON.parse(raw);
+    if(!saved||typeof saved!=='object'||Array.isArray(saved))throw Error('view');
+    const check={lang:v=>['fr','en'].includes(v),page:v=>['contacts','companies','opportunities','activities'].includes(v),q:v=>typeof v==='string',status:v=>['','client','prospect','partner'].includes(v),owner:v=>['','Maya','Alex'].includes(v),language:v=>['','fr','en'].includes(v),sort:v=>['asc','desc'].includes(v),p:v=>Number.isInteger(v)&&v>=1};
+    if(Object.entries(saved).some(([k,v])=>!check[k]||!check[k](v)))throw Error('view');
+    Object.assign(ui,saved);
+  }
+}catch{viewWritable=false}
+
+const t=k=>words[ui.lang][k]||k;
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normalize=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const company=id=>db.companies.find(x=>x.id===id);
+const person=id=>db.contacts.find(x=>x.id===id);
+const companyName=id=>company(id)?.name||t('noCompany');
+const initials=n=>n.split(' ').filter(Boolean).slice(0,2).map(x=>x[0]).join('');
+const locale=()=>ui.lang==='fr'?'fr-FR':'en-GB';
+const dateText=d=>new Intl.DateTimeFormat(locale(),{day:'numeric',month:'short',year:'numeric'}).format(new Date(d+'T12:00:00'));
+const money=n=>new Intl.NumberFormat(locale(),{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+function storeUI(){if(!viewWritable||!recordStore.state.writable)return;try{localStorage.setItem(UIKEY,JSON.stringify(ui))}catch{viewWritable=false}}
+function announce(s){clearTimeout(noticeTimer);document.querySelector('#status').textContent=s;noticeTimer=setTimeout(()=>document.querySelector('#status').textContent='',4500)}
+function commit(next){
+  if(failNext){failNext=false;return false}
+  const result=recordStore.commit(next);
+  if(result.ok)db=recordStore.state.data;
+  paintStorageWarning(result.ok?'':t('saveError'));
+  return result.ok;
+}
+function paintStorageWarning(extra=''){
+  const target=document.querySelector('#storage-warning');if(!target)return;
+  const state=recordStore.state;
+  const messages={unavailable:'storageUnavailable',malformed:'storageMalformed',invalid:'storageInvalid',newer:'storageNewer','migration-failed':'storageMigration',changed:'storageChanged'};
+  const message=messages[state.status]?t(messages[state.status]):'';
+  target.innerHTML=`${extra?`<p>${esc(extra)}</p>`:''}${message?`<p>${esc(message)} ${esc(t('storageBlocked'))}</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><button data-action="storage-retry">${t('storageRetry')}</button><button data-action="storage-reset">${t('storageReset')}</button>${state.originalRaw!==null?`<button data-action="storage-source">${t('storageSource')}</button>`:''}</div>`:''}${!viewWritable?`<p>${t('viewStorageWarning')}</p>`:''}`;
+}
+function recoverStorage(reset){
+  captureDraft();
+  const result=reset?recordStore.reset():null;
+  if(reset&&!result.ok){paintStorageWarning(t('saveError'));return}
+  if(!reset)recordStore.reload();
+  db=recordStore.state.data;
+  shell();
+  document.querySelector('#storage-warning button')?.focus();
+  if(recordStore.state.writable){document.querySelector('nav button.active')?.focus();announce(t(reset?'storageRecovered':'storageReloaded'))}
+}
+function downloadStorageSource(){
+  const raw=recordStore.state.originalRaw;if(raw===null)return;
+  const link=document.createElement('a'),url=URL.createObjectURL(new Blob([raw],{type:'text/plain;charset=utf-8'}));
+  link.href=url;link.download='atelier-saved-source.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+function nextActivity(id){return db.activities.filter(a=>a.contact===id&&!a.done).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id))[0]}
+function dateLabel(a){if(!a)return `<span class="muted">${t('noActivity')}</span>`;const late=a.date<day();return `<span class="${late?'overdue':'due'}">${late?t('overdue')+' · ':a.date===day()?t('today')+' · ':''}${dateText(a.date)}</span>`}
+function badge(c){return `<span class="badge ${c.status}">${t(c.status)}</span>`}
+function options(values,value,translate=true){return values.map(v=>`<option value="${esc(v)}" ${v===value?'selected':''}>${esc(translate?t(v):v)}</option>`).join('')}
+// Shared custom select presentation; hidden native controls retain FormData and change contracts.
+let activeDropdown=null;
+const dropdownChevron='<svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const dropdownCheck='<svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><path d="m4.5 10 3.5 3.5 7.5-7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function focusControl(id){const node=document.getElementById(id);(node?.matches('select[data-customized]')?document.getElementById(node.dataset.controlId):node)?.focus()}
+function syncDropdown(backing,trigger){
+  const option=backing.selectedOptions[0];
+  const value=trigger.querySelector('.dropdown-value');value.textContent=option?.textContent||t('notSet');
+  if(option?.dataset.description){const detail=document.createElement('span');detail.className='dropdown-option-description';detail.textContent=option.dataset.description;value.append(detail)}
+  trigger.setAttribute('aria-label',backing.dataset.fieldLabel+': '+(option?.textContent||t('notSet'))+(option?.dataset.description?' · '+option.dataset.description:''));
+  trigger.disabled=backing.disabled;
+  trigger.dataset.empty=backing.value===''?'true':'false';
+}
+function enhanceDropdowns(root=document){
+  for(const backing of root.querySelectorAll('select:not([data-customized])')){
+    const label=backing.closest('label');
+    const fieldLabel=backing.getAttribute('aria-label')||(label?Array.from(label.childNodes).filter(node=>node.nodeType===3).map(node=>node.textContent).join(' ').trim():t('stage'));
+    const id=backing.id||(backing.dataset.stage?'stage-'+backing.dataset.stage:(backing.form?.id||'choice')+'-'+backing.name);
+    backing.dataset.customized='true';backing.dataset.controlId=id;backing.dataset.fieldLabel=fieldLabel;
+    backing.id=id+'-backing';backing.hidden=true;backing.tabIndex=-1;backing.setAttribute('aria-hidden','true');
+    // The form submit handlers validate required relations. A hidden required
+    // select must not cause the browser's "not focusable" validation error.
+    if(backing.required){backing.dataset.required='true';backing.required=false}
+    const trigger=document.createElement('button');trigger.type='button';trigger.id=id;
+    trigger.className='dropdown-trigger '+(backing.className||'');
+    trigger.dataset.dropdownControl=id;trigger.setAttribute('aria-haspopup','listbox');trigger.setAttribute('aria-expanded','false');
+    trigger.setAttribute('aria-controls',id+'-listbox');
+    if(backing.dataset.required)trigger.dataset.required='true';
+    trigger.innerHTML='<span class="dropdown-value"></span><span class="dropdown-chevron">'+dropdownChevron+'</span>';
+    backing.insertAdjacentElement('afterend',trigger);if(label)label.htmlFor=id;
+    syncDropdown(backing,trigger);
+    trigger.addEventListener('click',()=>activeDropdown?.trigger===trigger?closeDropdown(true):openDropdown(backing,trigger));
+    trigger.addEventListener('keydown',event=>{
+      if(['ArrowDown','ArrowUp','Home','End','Enter',' '].includes(event.key)){
+        event.preventDefault();openDropdown(backing,trigger,event.key==='Home'?'first':event.key==='End'?'last':'selected');
+      }else if(event.key.length===1&&!event.ctrlKey&&!event.metaKey&&!event.altKey){
+        event.preventDefault();openDropdown(backing,trigger,'selected',event.key);
+      }
+    });
+  }
+}
+function closeDropdown(returnFocus=false){
+  const state=activeDropdown;if(!state)return;
+  activeDropdown=null;
+  state.trigger.setAttribute('aria-expanded','false');state.trigger.removeAttribute('aria-activedescendant');
+  if(typeof state.panel.hidePopover==='function'&&state.panel.matches(':popover-open'))state.panel.hidePopover();
+  state.panel.remove();
+  if(returnFocus&&state.trigger.isConnected)state.trigger.focus({preventScroll:true});
+}
+function placeDropdown(){
+  const state=activeDropdown;if(!state)return;
+  if(!state.trigger.isConnected){closeDropdown(false);return}
+  const viewport=window.visualViewport;
+  const leftEdge=(viewport?.offsetLeft||0)+8,topEdge=(viewport?.offsetTop||0)+8;
+  const rightEdge=leftEdge+(viewport?.width||window.innerWidth)-16,bottomEdge=topEdge+(viewport?.height||window.innerHeight)-16;
+  const box=state.trigger.getBoundingClientRect(),width=Math.min(Math.max(box.width,240),rightEdge-leftEdge);
+  const below=Math.max(0,bottomEdge-box.bottom-6),above=Math.max(0,box.top-topEdge-6);
+  const desired=Math.min(382,62+state.options.length*46+(state.search?54:0));
+  const flip=below<Math.min(desired,220)&&above>below;
+  const available=flip?above:below;
+  const height=Math.min(desired,available);
+  state.panel.style.width=width+'px';state.panel.style.maxHeight=Math.max(44,height)+'px';
+  state.list.style.maxHeight=Math.max(44,height-(state.search?99:45))+'px';
+  const actualHeight=state.panel.getBoundingClientRect().height;
+  state.panel.style.left=Math.min(Math.max(box.left,leftEdge),rightEdge-width)+'px';
+  state.panel.style.top=Math.max(topEdge,flip?box.top-6-actualHeight:Math.min(box.bottom+6,bottomEdge-actualHeight))+'px';
+  state.panel.dataset.side=flip?'top':'bottom';
+}
+function dropdownOptions(state){return state.options.filter(option=>normalize(option.label+' '+option.description).includes(normalize(state.query)))}
+function setDropdownActive(index,scroll=true){
+  const state=activeDropdown;if(!state)return;
+  const options=dropdownOptions(state);
+  state.active=Math.max(0,Math.min(index,options.length-1));
+  state.list.querySelectorAll('[role="option"]').forEach((node,i)=>node.classList.toggle('is-active',i===state.active));
+  const node=state.list.querySelectorAll('[role="option"]')[state.active];
+  const focusOwner=state.search||state.list;
+  if(node){focusOwner.setAttribute('aria-activedescendant',node.id);if(scroll)node.scrollIntoView({block:'nearest'})}
+  else focusOwner.removeAttribute('aria-activedescendant');
+}
+function renderDropdownOptions(){
+  const state=activeDropdown;if(!state)return;
+  const options=dropdownOptions(state);state.list.replaceChildren();state.empty.hidden=options.length>0;
+  options.forEach((option,index)=>{
+    const node=document.createElement('div');node.className='dropdown-option';node.id=state.trigger.id+'-option-'+option.index;
+    node.setAttribute('role','option');node.setAttribute('aria-selected',String(option.value===state.backing.value));
+    if(option.disabled)node.setAttribute('aria-disabled','true');
+    const copy=document.createElement('span');copy.className='dropdown-option-copy';
+    const label=document.createElement('span');label.className='dropdown-option-label';label.textContent=option.label;copy.append(label);
+    if(option.description){const detail=document.createElement('span');detail.className='dropdown-option-description';detail.textContent=option.description;copy.append(detail)}
+    const check=document.createElement('span');check.className='dropdown-check';check.innerHTML=dropdownCheck;
+    node.append(copy,check);state.list.append(node);
+    node.addEventListener('pointermove',()=>{if(activeDropdown===state&&!option.disabled)setDropdownActive(index,false)});
+    node.addEventListener('click',()=>{if(!option.disabled)chooseDropdown(index)});
+  });
+  setDropdownActive(state.active,false);placeDropdown();
+}
+function chooseDropdown(index){
+  const state=activeDropdown,option=state&&dropdownOptions(state)[index];if(!state||!option||option.disabled)return;
+  state.backing.value=option.value;syncDropdown(state.backing,state.trigger);
+  closeDropdown(true);
+  state.backing.dispatchEvent(new Event('change',{bubbles:true}));
+}
+function moveDropdown(direction){
+  const state=activeDropdown;if(!state)return;
+  const options=dropdownOptions(state);let index=state.active;
+  for(let count=0;count<options.length;count++){index=(index+direction+options.length)%options.length;if(!options[index].disabled){setDropdownActive(index);return}}
+}
+function dropdownTab(event){
+  const state=activeDropdown;if(!state)return;event.preventDefault();
+  const scope=state.trigger.closest('dialog[open]')||document;
+  const stops=Array.from(scope.querySelectorAll('button,a[href],input,textarea,select,[tabindex]')).filter(node=>!state.panel.contains(node)&&!node.disabled&&node.tabIndex>=0&&node.getClientRects().length>0);
+  const current=stops.indexOf(state.trigger),target=stops[current+(event.shiftKey?-1:1)]||(scope===document?state.trigger:stops[event.shiftKey?stops.length-1:0]);
+  closeDropdown(false);target?.focus();
+}
+function dropdownTypeahead(character){
+  const state=activeDropdown;if(!state)return;
+  const now=Date.now();state.buffer=now-state.typedAt>700?character:state.buffer+character;state.typedAt=now;
+  let match=dropdownOptions(state).findIndex(option=>!option.disabled&&normalize(option.label).startsWith(normalize(state.buffer)));
+  if(match<0&&state.buffer.length>1){state.buffer=character;match=dropdownOptions(state).findIndex(option=>!option.disabled&&normalize(option.label).startsWith(normalize(character)))}
+  if(match>=0)setDropdownActive(match);
+}
+function openDropdown(backing,trigger,position='selected',character=''){
+  closeDropdown(false);if(trigger.disabled)return;
+  const panel=document.createElement('div');panel.className='dropdown-popover';panel.setAttribute('popover','manual');
+  const caption=document.createElement('div');caption.className='dropdown-caption';caption.textContent=backing.dataset.fieldLabel;panel.append(caption);
+  const options=Array.from(backing.options).map((option,index)=>({value:option.value,label:option.textContent,description:option.dataset.description||'',index,disabled:option.disabled}));
+  let search=null;
+  if(options.length>6){
+    const searchWrap=document.createElement('div');searchWrap.className='dropdown-search-wrap';search=document.createElement('input');
+    search.type='search';search.className='dropdown-search';search.placeholder=t('searchChoices');search.setAttribute('aria-label',t('searchChoices')+' · '+backing.dataset.fieldLabel);
+    search.setAttribute('role','combobox');search.setAttribute('aria-autocomplete','list');search.setAttribute('aria-expanded','true');search.setAttribute('aria-controls',trigger.id+'-listbox');searchWrap.append(search);panel.append(searchWrap);
+  }
+  const list=document.createElement('div');list.className='dropdown-list';list.id=trigger.id+'-listbox';list.setAttribute('role','listbox');list.setAttribute('aria-label',backing.dataset.fieldLabel);list.tabIndex=-1;panel.append(list);
+  const empty=document.createElement('p');empty.className='dropdown-empty';empty.setAttribute('role','status');empty.textContent=t('noChoices');empty.hidden=true;panel.append(empty);
+  const selected=Math.max(0,options.findIndex(option=>option.value===backing.value));
+  activeDropdown={backing,trigger,panel,list,empty,search,options,query:'',active:position==='first'?0:position==='last'?options.length-1:selected,buffer:'',typedAt:0};
+  // Being a descendant of the modal preserves its focus boundary. The Popover
+  // API promotes the menu above dialog clipping; fixed positioning is the fallback.
+  (trigger.closest('dialog[open]')||document.body).append(panel);
+  if(typeof panel.showPopover==='function')panel.showPopover();
+  trigger.setAttribute('aria-expanded','true');renderDropdownOptions();
+  (search||list).focus({preventScroll:true});setDropdownActive(activeDropdown.active);
+  if(character){if(search){search.value=character;activeDropdown.query=character;activeDropdown.active=0;renderDropdownOptions()}else dropdownTypeahead(character)}
+  panel.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeDropdown(true)}
+    else if(event.key==='Tab')dropdownTab(event);
+    else if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();moveDropdown(event.key==='ArrowDown'?1:-1)}
+    else if(event.key==='Home'||event.key==='End'){
+      // Keep normal text-caret keys in a populated search field; Ctrl+Home/End
+      // still provides list boundaries, as do Home/End on the listbox itself.
+      if(event.target!==search||!search.value||event.ctrlKey){event.preventDefault();setDropdownActive(event.key==='Home'?0:dropdownOptions(activeDropdown).length-1)}
+    }else if(event.key==='Enter'||(event.key===' '&&event.target!==search)){event.preventDefault();chooseDropdown(activeDropdown.active)}
+    else if(!search&&event.key.length===1&&!event.ctrlKey&&!event.metaKey&&!event.altKey){event.preventDefault();dropdownTypeahead(event.key)}
+  });
+  if(search)search.addEventListener('input',()=>{if(activeDropdown){activeDropdown.query=search.value;activeDropdown.active=0;renderDropdownOptions()}});
+}
+document.addEventListener('pointerdown',event=>{if(activeDropdown&&!activeDropdown.panel.contains(event.target)&&!activeDropdown.trigger.contains(event.target))closeDropdown(true)},true);
+document.addEventListener('focusin',event=>{if(activeDropdown&&!activeDropdown.panel.contains(event.target)&&!activeDropdown.trigger.contains(event.target))closeDropdown(false)});
+window.addEventListener('resize',placeDropdown);
+window.addEventListener('scroll',event=>{if(activeDropdown&&!activeDropdown.panel.contains(event.target))placeDropdown()},true);
+window.visualViewport?.addEventListener('resize',placeDropdown);
+window.visualViewport?.addEventListener('scroll',placeDropdown);
+
+function rememberRerenderFocus(){
+  const node=activeDropdown?.trigger||document.activeElement;if(!node||node===document.body)return null;
+  const token={node,id:node.id||'',attrs:{}};
+  for(const name of ['data-nav','data-clear','data-page','data-activity-view','data-action','data-stage','data-toggle','href'])if(node.hasAttribute(name))token.attrs[name]=node.getAttribute(name);
+  return token;
+}
+function restoreRerenderFocus(token){
+  if(!token||token.node.isConnected)return;
+  let target=token.id?document.getElementById(token.id):null;
+  if(!target){
+    const entries=Object.entries(token.attrs);
+    if(entries.length)target=Array.from(document.querySelectorAll('button,select,a')).find(node=>!node.disabled&&entries.every(([name,value])=>node.getAttribute(name)===value));
+  }
+  if(!target&&token.attrs['data-clear'])target=document.getElementById(token.attrs['data-clear']==='q'?'search':'filter-'+token.attrs['data-clear']);
+  if(!target&&token.attrs['data-action']==='reset')target=document.getElementById('search');
+  if(!target&&token.attrs['data-page'])target=document.getElementById('list-page-status');
+  if(!target)target=document.querySelector('nav button.active');
+  target?.focus();
+}
+function shell(){const token=rememberRerenderFocus();closeDropdown(false);shellRender();enhanceDropdowns();paintStorageWarning();restoreRerenderFocus(token)}
+function renderPage(){const token=rememberRerenderFocus();closeDropdown(false);renderPageContent();enhanceDropdowns();restoreRerenderFocus(token)}
+function renderResults(){const token=rememberRerenderFocus();closeDropdown(false);renderResultsContent();enhanceDropdowns();restoreRerenderFocus(token)}
+function shellRender(){document.documentElement.lang=ui.lang;document.title=`Atelier · ${t(ui.page)}`;document.querySelector('#app').innerHTML=`<div class="shell"><aside class="sidebar"><div class="brand"><span class="mark" aria-hidden="true"></span>atelier<span style="font-weight:400">/</span></div><p class="workspace">${t('workspace')}</p><nav aria-label="Navigation">${['contacts','companies','opportunities','activities'].map((v,i)=>`<button data-nav="${v}" ${ui.page===v?'aria-current="page" class="active"':''}><span class="n" aria-hidden="true">0${i+1}</span>${t(v)}</button>`).join('')}</nav><div class="aside-foot"><small>ATELIER AGENCY<br>Douala · Remote</small><div class="user"><span class="avatar">ML</span><div>Maya Laurent<br><small>Account manager</small></div></div></div></aside><main class="main"><div class="topline"><span>${t('synthetic')}</span><select class="locale" id="locale" aria-label="${t('interfaceLanguage')}"><option value="fr" ${ui.lang==='fr'?'selected':''}>Français</option><option value="en" ${ui.lang==='en'?'selected':''}>English</option></select></div><div id="storage-warning" class="banner" role="alert"></div><div class="heading"><div><h1>${t(ui.page)}</h1><p>${t(ui.page==='contacts'?'desc':ui.page==='companies'?'companiesDesc':ui.page==='opportunities'?'oppsDesc':'activitiesDesc')}</p></div>${ui.page==='contacts'?`<button class="primary" data-action="create">+ ${t('addContact')}</button>`:ui.page==='activities'?`<button class="primary" data-action="add-activity">+ ${t('addActivity')}</button>`:''}</div><div id="controls"></div><div id="work"></div><div class="notice">${t('boundary')}<details><summary>${t('demoTools')}</summary><button class="small" data-action="fail">${t('failNext')}</button>${recordStore.state.originalRaw!==null?`<button class="small" data-action="storage-source">${t('storageSource')}</button>`:''}</details></div></main></div>`;renderPage()}
+function renderPageContent(){let controls=document.querySelector('#controls');if(ui.page==='contacts'){controls.innerHTML=`<div class="view"><span>${t('allContacts')}</span><small>${t('local')}</small></div><div class="toolbar"><label class="search">${t('search')}<input id="search" type="search" placeholder="${t('searchHint')}" value="${esc(ui.q)}"></label><label>${t('status')}<select id="filter-status"><option value="">${t('all')}</option>${options(['client','prospect','partner'],ui.status)}</select></label><label>${t('owner')}<select id="filter-owner"><option value="">${t('all')}</option>${options(['Maya','Alex'],ui.owner,false)}</select></label><label>${t('language')}<select id="filter-language"><option value="">${t('all')}</option><option value="fr" ${ui.language==='fr'?'selected':''}>Français</option><option value="en" ${ui.language==='en'?'selected':''}>English</option></select></label></div>`}else if(ui.page==='activities'){controls.innerHTML=`<div class="view"><button class="quiet" data-activity-view="open" ${activityView==='open'?'aria-pressed="true" style="border-bottom:3px solid var(--accent);border-radius:0;font-weight:650"':'aria-pressed="false"'}>${t('open')} (${db.activities.filter(a=>!a.done).length})</button><button class="quiet" data-activity-view="done" aria-pressed="${activityView==='done'}" ${activityView==='done'?'style="border-bottom:3px solid var(--accent);border-radius:0;font-weight:650"':''}>${t('done')} (${db.activities.filter(a=>a.done).length})</button></div>`}else controls.innerHTML='';renderResults()}
+function matches(){return db.contacts.filter(c=>(!ui.q||normalize([c.name,c.email,companyName(c.company)].join(' ')).includes(normalize(ui.q)))&&(!ui.status||c.status===ui.status)&&(!ui.owner||c.owner===ui.owner)&&(!ui.language||c.language===ui.language)).sort((a,b)=>(a.name.localeCompare(b.name,locale())*(ui.sort==='asc'?1:-1))||a.id.localeCompare(b.id))}
+function renderResultsContent(){const work=document.querySelector('#work');if(ui.page==='contacts'){let list=matches(),totalPages=Math.max(1,Math.ceil(list.length/6));ui.p=Math.min(Math.max(1,ui.p),totalPages);let rows=list.slice((ui.p-1)*6,ui.p*6),active=['q','status','owner','language'].filter(k=>ui[k]);work.innerHTML=`<div class="results-meta"><span>${list.length} ${list.length===1?(ui.lang==='fr'?'contact correspondant':'matching contact'):t('matches')} · ${t('countScope')}</span><div class="scope">${active.map(k=>`<button class="filter-chip" data-clear="${k}">${esc(k==='status'?t(ui[k]):ui[k])} ×<span style="position:absolute;width:1px;height:1px;overflow:hidden"> ${t('reset')}</span></button>`).join('')}${active.length?`<button class="quiet small" data-action="reset">${t('reset')}</button>`:''}</div></div>${!list.length?`<div class="empty"><h2>${t('empty')}</h2><p>${t('emptyDesc')}</p><button data-action="reset">${t('reset')}</button></div>`:`<div class="table-wrap"><table><colgroup><col class="col-name" style="width:28%"><col class="col-company" style="width:22%"><col class="col-status" style="width:13%"><col class="col-owner" style="width:13%"><col class="col-next" style="width:24%"></colgroup><thead><tr><th scope="col" aria-sort="${ui.sort==='asc'?'ascending':'descending'}"><button class="sort-link" data-action="sort">${t('name')} ${ui.sort==='asc'?'↑':'↓'}</button></th><th scope="col" class="col-company">${t('company')}</th><th scope="col">${t('status')}</th><th scope="col" class="col-owner">${t('owner')}</th><th scope="col" class="col-next">${t('next')}</th></tr></thead><tbody>${rows.map(c=>{let a=nextActivity(c.id);return `<tr><td><div class="identity"><span class="avatar" aria-hidden="true">${esc(initials(c.name))}</span><div><a href="#contact=${c.id}">${esc(c.name)}</a><small>${esc(c.role||c.email)}</small><div class="mobile-activity">${esc(companyName(c.company))}<br>${dateLabel(a)}</div></div></div></td><td class="col-company">${esc(companyName(c.company))}<small style="display:block">${esc(company(c.company)?.city||'—')}</small></td><td>${badge(c)}</td><td class="col-owner">${esc(c.owner)}</td><td class="col-next">${dateLabel(a)}<small style="display:block;margin-top:4px">${esc(a?.title||'')}</small></td></tr>`}).join('')}</tbody></table></div>`}<div class="footer"><span>${list.length?`${(ui.p-1)*6+1}–${Math.min(ui.p*6,list.length)} / ${list.length}`:'0 / 0'}</span><div class="pager"><button data-page="${ui.p-1}" ${ui.p<=1?'disabled':''}>${t('previous')}</button><span id="list-page-status" tabindex="-1">${t('page')} ${ui.p} ${t('of')} ${totalPages}</span><button data-page="${ui.p+1}" ${ui.p>=totalPages?'disabled':''}>${t('nextPage')}</button></div></div>`;storeUI()}else if(ui.page==='activities'){let tasks=db.activities.filter(a=>a.done===(activityView==='done')).sort((a,b)=>a.date.localeCompare(b.date));work.innerHTML=tasks.length?`<div class="activity-list">${tasks.map(a=>`<div class="activity-row ${a.done?'done':''}"><div><h3>${esc(a.title)}</h3><p><a href="#contact=${a.contact}">${esc(person(a.contact)?.name||'—')}</a> <span class="muted">· ${esc(person(a.contact)?.owner||'—')}</span></p></div><div class="activity-date">${a.done?dateText(a.date):dateLabel(a)}</div><button data-toggle="${a.id}" aria-label="${t(a.done?'undo':'complete')}: ${esc(a.title)}">${t(a.done?'undo':'complete')}</button></div>`).join('')}</div>`:`<div class="empty"><h2>${t('noTasks')}</h2><p>${t('noTasksDesc')}</p><button data-action="add-activity">${t('addActivity')}</button></div>`}else if(ui.page==='companies'){work.innerHTML=`<div class="company-grid">${db.companies.map(co=>{const contacts=db.contacts.filter(c=>c.company===co.id);const value=db.opportunities.filter(o=>o.company===co.id&&!['won','lost'].includes(o.stage)).reduce((s,o)=>s+o.amount,0);return `<article class="company"><h2>${esc(co.name)}</h2><p class="muted">${esc(co.sector)} · ${esc(co.city)}</p><div class="line"><span>${contacts.length} ${t('contactsCount')}</span><span>${t('openValue')}: <strong>${money(value)}</strong></span></div><p>${contacts.map(c=>`<a href="#contact=${c.id}">${esc(c.name)}</a>`).join(' · ')||t('noActivity')}</p></article>`}).join('')}</div>`}else{work.innerHTML=`<div class="table-wrap"><table class="opps-table"><thead><tr><th scope="col">${t('opportunity')}</th><th scope="col">${t('company')}</th><th scope="col">${t('primaryContact')}</th><th scope="col" class="money">${t('amount')} · EUR</th><th scope="col">${t('stage')}</th></tr></thead><tbody>${db.opportunities.map(o=>`<tr><td><strong>${esc(o.name)}</strong></td><td>${esc(companyName(o.company))}</td><td><a href="#contact=${o.contact}">${esc(person(o.contact)?.name||'—')}</a></td><td class="money">${money(o.amount)}</td><td><select data-stage="${o.id}" aria-label="${t('stage')}: ${esc(o.name)}">${options(['discovery','proposal','negotiation','won','lost'],o.stage)}</select></td></tr>`).join('')}</tbody></table></div>`}}
+const dialog=document.querySelector('#record');
+function openDialog(){closeDropdown(false);enhanceDropdowns(dialog);if(!dialog.open){opener=document.activeElement;dialog.showModal()}dialog.scrollTop=0;setTimeout(()=>(dialog.querySelector('[autofocus]')||dialog.querySelector('[data-action="close"]'))?.focus(),0)}
+function header(title,subtitle=''){return `<div class="dialog-head"><div><h2 id="dialog-title">${esc(title)}</h2>${subtitle?`<p>${esc(subtitle)}</p>`:''}</div><button class="close quiet" data-action="close" aria-label="${t('close')}">×</button></div>`}
+function showRecord(id){activeId=id;dialogMode='detail';const c=person(id);if(!c){dialog.innerHTML=header(t('notFound'));openDialog();return}const acts=db.activities.filter(a=>a.contact===id&&!a.done).sort((a,b)=>a.date.localeCompare(b.date));const opps=db.opportunities.filter(o=>o.contact===id);dialog.innerHTML=header(c.name,`${c.role||c.email} · ${companyName(c.company)}`)+`<div class="dialog-body"><section><div class="section-title"><div>${badge(c)}</div><button data-action="edit">${t('edit')}</button></div><dl class="properties"><dt>${t('email')}</dt><dd><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></dd><dt>${t('phone')}</dt><dd>${c.phone?`<a href="tel:${esc(c.phone.replace(/\s/g,''))}">${esc(c.phone)}</a>`:t('notSet')}</dd><dt>${t('owner')}</dt><dd>${esc(c.owner)}</dd><dt>${t('language')}</dt><dd>${c.language==='fr'?'Français':'English'}</dd><dt>${t('company')}</dt><dd>${esc(companyName(c.company))}</dd></dl></section><section><div class="section-title"><h3>${t('next')}</h3><button class="small" data-action="add-related">+ ${t('activity')}</button></div>${acts.length?acts.map(a=>`<div class="related"><div><p>${esc(a.title)}</p><small>${dateLabel(a)}</small></div><button class="small" data-toggle="${a.id}" aria-label="${t('complete')}: ${esc(a.title)}">${t('complete')}</button></div>`).join(''):`<p class="muted">${t('noActivity')}</p>`}</section><section><h3>${t('relatedOpps')}</h3>${opps.length?opps.map(o=>`<div class="related"><div><p>${esc(o.name)}</p><small>${money(o.amount)} · ${t(o.stage)}</small></div></div>`).join(''):`<p class="subtle-row muted">${t('noOpp')}</p>`}</section></div>`;openDialog()}
+function contactForm(id=''){dialogMode='edit';activeId=id;let c=draftMap[id||'new']||clone(person(id)||{name:'',email:'',phone:'',role:'',company:'',status:'prospect',owner:'Maya',language:ui.lang});dialog.innerHTML=header(t(id?'editContact':'newContact'),t(id?'editDesc':'contactDesc'))+`<form id="contact-form"><div class="dialog-body"><div id="form-error" class="form-error" role="alert"></div><div class="form-grid"><label class="full">${t('fullName')} · ${t('required')}<input name="name" autocomplete="name" required maxlength="120" autofocus value="${esc(c.name)}"></label><label class="full">${t('email')} · ${t('required')}<input name="email" type="email" autocomplete="email" required value="${esc(c.email)}"></label><label>${t('phone')}<input name="phone" type="tel" autocomplete="tel" value="${esc(c.phone)}"></label><label>${t('role')}<input name="role" value="${esc(c.role)}"></label><label class="full">${t('company')}<select name="company"><option value="">${t('noCompany')}</option>${db.companies.map(co=>`<option value="${co.id}" ${c.company===co.id?'selected':''}>${esc(co.name)}</option>`).join('')}</select></label><label>${t('status')}<select name="status">${options(['prospect','client','partner'],c.status)}</select></label><label>${t('owner')}<select name="owner">${options(['Maya','Alex'],c.owner,false)}</select></label><label>${t('language')}<select name="language"><option value="fr" ${c.language==='fr'?'selected':''}>Français</option><option value="en" ${c.language==='en'?'selected':''}>English</option></select></label></div><p class="draft-note">${t('draft')}</p></div><div class="dialog-actions"><button type="button" data-action="cancel-edit">${t('cancel')}</button><button class="primary" type="submit">${t('save')}</button></div></form>`;openDialog()}
+function activityForm(id=''){dialogMode='activity';const key='activity-'+id,c=draftMap[key]||{title:'',date:day(1),contact:id||db.contacts[0]?.id||''};activeId=id;dialog.innerHTML=header(t('addActivity'),id?`${t('activityFor')} ${person(id)?.name}`:'')+`<form id="activity-form"><div class="dialog-body"><div id="form-error" class="form-error" role="alert"></div><div class="form-grid"><label class="full">${t('activityTitle')} · ${t('required')}<input name="title" required maxlength="200" autofocus value="${esc(c.title)}"></label><label class="full">${t('contact')}<select name="contact" required>${db.contacts.map(p=>`<option value="${p.id}" data-description="${esc(p.email)}" ${p.id===c.contact?'selected':''}>${esc(p.name)} · ${esc(companyName(p.company))}</option>`).join('')}</select></label><label>${t('dueDate')} · ${t('required')}<input type="date" name="date" required value="${esc(c.date)}"></label></div><p class="draft-note">${t('draft')}</p></div><div class="dialog-actions"><button type="button" data-action="cancel-activity">${t('cancel')}</button><button class="primary" type="submit">${t('save')}</button></div></form>`;openDialog()}
+function captureDraft(){const form=dialog.querySelector('form');if(form){const draft=Object.fromEntries(new FormData(form));draftMap[dialogMode==='activity'?'activity-'+activeId:activeId||'new']=draft}}
+function restoreFocus(){if(opener?.isConnected){opener.focus();return}const link=activeId?document.querySelector(`a[href="#contact=${activeId}"]`):null;(link||document.querySelector('.heading button')||document.querySelector('nav button.active'))?.focus()}
+function closeDialog(){closeDropdown(false);captureDraft();dialog.close();if(location.hash)history.pushState(null,'',location.pathname+location.search);restoreFocus();dialogMode='';activeId=''}
+function errorInForm(message){if(!recordStore.state.writable)message+=' '+t('storageBlocked');const el=dialog.querySelector('#form-error');el.textContent=message;el.setAttribute('tabindex','-1');el.focus()}
+function toggleActivity(id){const next=clone(db),a=next.activities.find(a=>a.id===id);a.done=!a.done;if(commit(next)){announce(t(a.done?'completed':'restored'));if(ui.page==='activities'){renderPage();document.querySelector('[data-activity-view="'+activityView+'"]')?.focus()}else renderResults();if(dialog.open&&dialogMode==='detail')showRecord(activeId)}else{if(dialog.open){let e=dialog.querySelector('.dialog-body');e.insertAdjacentHTML('afterbegin',`<div class="banner" role="alert">${t('saveError')}</div>`)}else paintStorageWarning(t('saveError'));renderResults()}}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.nav){ui.page=b.dataset.nav;storeUI();shell();document.querySelector('nav button.active')?.focus();return}if(b.dataset.clear){ui[b.dataset.clear]='';ui.p=1;renderPage();document.getElementById(b.dataset.clear==='q'?'search':'filter-'+b.dataset.clear)?.focus();return}if(b.dataset.page){ui.p=Number(b.dataset.page);renderResults();document.getElementById('list-page-status')?.focus();return}if(b.dataset.activityView){activityView=b.dataset.activityView;renderPage();Array.from(document.querySelectorAll('[data-activity-view]')).find(node=>node.dataset.activityView===activityView)?.focus();return}if(b.dataset.toggle){toggleActivity(b.dataset.toggle);return}switch(b.dataset.action){case'storage-retry':recoverStorage(false);break;case'storage-reset':recoverStorage(true);break;case'storage-source':downloadStorageSource();break;case'create':contactForm();break;case'close':closeDialog();break;case'edit':contactForm(activeId);break;case'cancel-edit':captureDraft();activeId?showRecord(activeId):closeDialog();break;case'cancel-activity':captureDraft();activeId?showRecord(activeId):closeDialog();break;case'add-related':activityForm(activeId);break;case'add-activity':activityForm();break;case'reset':Object.assign(ui,{q:'',status:'',owner:'',language:'',p:1});renderPage();document.getElementById('search')?.focus();break;case'sort':ui.sort=ui.sort==='asc'?'desc':'asc';renderResults();document.querySelector('[data-action="sort"]')?.focus();break;case'fail':failNext=true;announce(t('failureArmed'));break}});
+document.addEventListener('input',e=>{if(e.target.id==='search'){ui.q=e.target.value;ui.p=1;renderResults()}if(e.target.closest('form'))captureDraft()});
+document.addEventListener('change',e=>{
+  const controlId=e.target.dataset.controlId||e.target.id;
+  if(controlId==='locale'){ui.lang=e.target.value;storeUI();shell();focusControl('locale')}
+  else if(controlId.startsWith('filter-')){ui[controlId.slice(7)]=e.target.value;ui.p=1;renderResults();focusControl(controlId)}
+  else if(e.target.dataset.stage){const next=clone(db);next.opportunities.find(o=>o.id===e.target.dataset.stage).stage=e.target.value;if(commit(next)){announce(t('saved'))}else{paintStorageWarning(t('saveError'));renderResults();focusControl(controlId)}}
+  if(e.target.closest('form'))captureDraft();
+});
+document.addEventListener('submit',e=>{if(!['contact-form','activity-form'].includes(e.target.id))return;e.preventDefault();captureDraft();const values=Object.fromEntries(new FormData(e.target)),next=clone(db);if(e.target.id==='contact-form'){values.name=values.name.trim();values.email=values.email.trim();if(!values.name||!values.email||!e.target.checkValidity()){errorInForm(t('contactRequired'));return}const id=activeId||'c'+Date.now().toString(36);const c={...values,id};const ix=next.contacts.findIndex(x=>x.id===id);ix<0?next.contacts.push(c):next.contacts[ix]=c;if(!commit(next)){errorInForm(t('saveError'));return}delete draftMap[activeId||'new'];renderResults();announce(t('saved'));if(location.hash!==`#contact=${id}`){location.hash=`contact=${id}`}else showRecord(id)}else{if(!values.title.trim()||!values.date||!person(values.contact)){errorInForm(t('activityRequired'));return}next.activities.push({...values,title:values.title.trim(),id:'a'+Date.now().toString(36),done:false});if(!commit(next)){errorInForm(t('saveError'));return}delete draftMap['activity-'+activeId];announce(t('saved'));if(ui.page==='activities')renderPage();else renderResults();activeId?showRecord(activeId):closeDialog()}});
+dialog.addEventListener('cancel',e=>{e.preventDefault();closeDialog()});
+window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#contact=(.+)$/);if(m)showRecord(decodeURIComponent(m[1]));else if(dialog.open){closeDropdown(false);captureDraft();dialog.close();restoreFocus()}});
+shell();if(location.hash.startsWith('#contact='))showRecord(decodeURIComponent(location.hash.slice(9)));
+</script>
+</body></html>

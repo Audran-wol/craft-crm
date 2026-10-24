@@ -1,0 +1,107 @@
+{
+  "scope": "",
+  "mode": "build",
+  "evidence_date": "",
+  "gates": [
+    {
+      "id": "G01",
+      "label": "Main workflow completes",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "G02",
+      "label": "Data and permission boundaries",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "G03",
+      "label": "Keyboard and focus",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "G04",
+      "label": "Failed-save recovery",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "G05",
+      "label": "Responsive reachability",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "G06",
+      "label": "Query/count/total/selection consistency",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "G07",
+      "label": "Revamp regression preservation",
+      "status": "unknown",
+      "evidence": "",
+      "reason": ""
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "workflow",
+      "weight": 25,
+      "score": null,
+      "applicable": true,
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "architecture",
+      "weight": 15,
+      "score": null,
+      "applicable": true,
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "composition",
+      "weight": 20,
+      "score": null,
+      "applicable": true,
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "consistency",
+      "weight": 15,
+      "score": null,
+      "applicable": true,
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "accessibility",
+      "weight": 15,
+      "score": null,
+      "applicable": true,
+      "evidence": "",
+      "reason": ""
+    },
+    {
+      "id": "resilience",
+      "weight": 10,
+      "score": null,
+      "applicable": true,
+      "evidence": "",
+      "reason": ""
+    }
+  ],
+  "limitations": []
+}

@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1190" viewBox="0 0 1560 1190" role="img" aria-labelledby="title desc">
+<title id="title">CRM Craft: four task-led layout directions</title><desc id="desc">Original schematics of a records workspace, sales pipeline, follow-up operations view, and support inbox. Synthetic example data illustrates differing page composition.</desc>
+<g font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="1560" height="1190" rx="0" fill="#f2f4f7" stroke="none"/>
+<text x="48" y="58" font-size="12" fill="#526174" font-weight="600">CRM CRAFT / DIRECTION STUDIES</text>
+<text x="48" y="103" font-size="32" fill="#17212f" font-weight="600">Start with the work. Then choose the composition.</text>
+<text x="48" y="134" font-size="15" fill="#526174" font-weight="400">Four starting points for different tasks. Compare the same screen and data when choosing a direction for a real brief.</text>
+<rect x="48" y="175" width="30" height="22" rx="5" fill="#eaf0ff" stroke="none"/>
+<text x="56" y="190" font-size="10" fill="#1d4ed8" font-weight="500">A</text>
+<text x="90" y="193" font-size="20" fill="#17212f" font-weight="600">Records workspace</text>
+<text x="48" y="223" font-size="12" fill="#526174" font-weight="400">For finding, comparing, updating and following up on accounts.</text>
+<rect x="48" y="243" width="704" height="338" rx="9" fill="#fff" stroke="#d8dee7"/>
+<rect x="49" y="244" width="112" height="336" rx="8" fill="#f5f7fa" stroke="none"/>
+<path d="M161 243L161 581" stroke="#d8dee7"/>
+<rect x="64" y="260" width="20" height="20" rx="5" fill="#17212f" stroke="none"/>
+<text x="70" y="274" font-size="11" fill="#fff" font-weight="600">N</text>
+<text x="92" y="274" font-size="11" fill="#17212f" font-weight="600">Northstar</text>
+<text x="70" y="307" font-size="10" fill="#526174" font-weight="400">Overview</text>
+<rect x="58" y="323" width="92" height="28" rx="5" fill="#e5ecfb" stroke="none"/>
+<text x="70" y="341" font-size="10" fill="#1d4ed8" font-weight="600">Accounts</text>
+<text x="70" y="375" font-size="10" fill="#526174" font-weight="400">Pipeline</text>
+<text x="70" y="409" font-size="10" fill="#526174" font-weight="400">Activities</text>
+<text x="70" y="443" font-size="10" fill="#526174" font-weight="400">Inbox</text>
+<text x="66" y="560" font-size="10" fill="#657287" font-weight="400">Settings</text>
+<text x="181" y="277" font-size="17" fill="#17212f" font-weight="600">Accounts</text>
+<rect x="633" y="257" width="100" height="26" rx="5" fill="#1d4ed8" stroke="#1d4ed8"/>
+<text x="643" y="274" font-size="10" fill="#fff" font-weight="500">+ New account</text>
+<text x="181" y="312" font-size="11" fill="#1d4ed8" font-weight="600">All accounts</text>
+<text x="281" y="312" font-size="11" fill="#657287" font-weight="400">Needs follow-up</text>
+<text x="401" y="312" font-size="11" fill="#657287" font-weight="400">My accounts</text>
+<path d="M181 323H732" stroke="#e4e8ed"/>
+<rect x="181" y="336" width="190" height="27" rx="5" fill="#f8f9fb" stroke="#d8dee7"/>
+<text x="191" y="354" font-size="10" fill="#657287" font-weight="400">Search accounts...</text>
+<rect x="383" y="336" width="82.0" height="26" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="393" y="353" font-size="10" fill="#425267" font-weight="500">Filters  2</text>
+<rect x="463" y="336" width="44.8" height="26" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="473" y="353" font-size="10" fill="#425267" font-weight="500">Sort</text>
+<text x="589" y="353" font-size="10" fill="#657287" font-weight="400">4 of 24 accounts</text>
+<text x="181" y="392" font-size="10" fill="#657287" font-weight="600">Account</text>
+<text x="373" y="392" font-size="10" fill="#657287" font-weight="600">Owner</text>
+<text x="461" y="392" font-size="10" fill="#657287" font-weight="600">Status</text>
+<text x="578" y="392" font-size="10" fill="#657287" font-weight="600">Next task</text>
+<path d="M181 405H732" stroke="#e4e8ed"/>
+<text x="181" y="422" font-size="11" fill="#17212f" font-weight="600">Acme Studio</text>
+<text x="181" y="436" font-size="9" fill="#657287" font-weight="400">Design services</text>
+<text x="373" y="428" font-size="10" fill="#526174" font-weight="400">M. Cole</text>
+<rect x="461" y="414" width="65.6" height="22" rx="5" fill="#e9f3ee" stroke="none"/>
+<text x="469" y="429" font-size="10" fill="#226346" font-weight="500">Customer</text>
+<text x="578" y="428" font-size="10" fill="#526174" font-weight="400">Call · Today</text>
+<path d="M181 446H732" stroke="#e4e8ed"/>
+<text x="181" y="463" font-size="11" fill="#17212f" font-weight="600">Orbit Health</text>
+<text x="181" y="477" font-size="9" fill="#657287" font-weight="400">Health technology</text>
+<text x="373" y="469" font-size="10" fill="#526174" font-weight="400">J. Kim</text>
+<rect x="461" y="455" width="71.80000000000001" height="22" rx="5" fill="#eef1f6" stroke="none"/>
+<text x="469" y="470" font-size="10" fill="#526174" font-weight="500">Qualified</text>
+<text x="578" y="469" font-size="10" fill="#526174" font-weight="400">Demo · Fri</text>
+<path d="M181 487H732" stroke="#e4e8ed"/>
+<text x="181" y="504" font-size="11" fill="#17212f" font-weight="600">Pine &amp; Co.</text>
+<text x="181" y="518" font-size="9" fill="#657287" font-weight="400">Retail</text>
+<text x="373" y="510" font-size="10" fill="#526174" font-weight="400">M. Cole</text>
+<rect x="461" y="496" width="65.6" height="22" rx="5" fill="#eef1f6" stroke="none"/>
+<text x="469" y="511" font-size="10" fill="#526174" font-weight="500">Prospect</text>
+<text x="578" y="510" font-size="10" fill="#526174" font-weight="400">Email · Mon</text>
+<path d="M181 528H732" stroke="#e4e8ed"/>
+<text x="181" y="545" font-size="11" fill="#17212f" font-weight="600">Meridian Labs</text>
+<text x="181" y="559" font-size="9" fill="#657287" font-weight="400">Research</text>
+<text x="373" y="551" font-size="10" fill="#526174" font-weight="400">A. Rivera</text>
+<rect x="461" y="537" width="65.6" height="22" rx="5" fill="#e9f3ee" stroke="none"/>
+<text x="469" y="552" font-size="10" fill="#226346" font-weight="500">Customer</text>
+<text x="578" y="551" font-size="10" fill="#526174" font-weight="400">Review · Tue</text>
+<text x="48" y="610" font-size="12" fill="#526174" font-weight="400">List first · saved views · quick inspection · explicit selection scope</text>
+<rect x="808" y="175" width="30" height="22" rx="5" fill="#eaf0ff" stroke="none"/>
+<text x="816" y="190" font-size="10" fill="#1d4ed8" font-weight="500">B</text>
+<text x="850" y="193" font-size="20" fill="#17212f" font-weight="600">Pipeline workspace</text>
+<text x="808" y="223" font-size="12" fill="#526174" font-weight="400">For reviewing deal progress and choosing the next action.</text>
+<rect x="808" y="243" width="704" height="338" rx="9" fill="#fff" stroke="#d8dee7"/>
+<rect x="809" y="244" width="112" height="336" rx="8" fill="#f5f7fa" stroke="none"/>
+<path d="M921 243L921 581" stroke="#d8dee7"/>
+<rect x="824" y="260" width="20" height="20" rx="5" fill="#17212f" stroke="none"/>
+<text x="830" y="274" font-size="11" fill="#fff" font-weight="600">N</text>
+<text x="852" y="274" font-size="11" fill="#17212f" font-weight="600">Northstar</text>
+<text x="830" y="307" font-size="10" fill="#526174" font-weight="400">Overview</text>
+<text x="830" y="341" font-size="10" fill="#526174" font-weight="400">Accounts</text>
+<rect x="818" y="357" width="92" height="28" rx="5" fill="#e5ecfb" stroke="none"/>
+<text x="830" y="375" font-size="10" fill="#1d4ed8" font-weight="600">Pipeline</text>
+<text x="830" y="409" font-size="10" fill="#526174" font-weight="400">Activities</text>
+<text x="830" y="443" font-size="10" fill="#526174" font-weight="400">Inbox</text>
+<text x="826" y="560" font-size="10" fill="#657287" font-weight="400">Settings</text>
+<text x="941" y="277" font-size="17" fill="#17212f" font-weight="600">Sales pipeline</text>
+<rect x="1393" y="257" width="100" height="26" rx="5" fill="#1d4ed8" stroke="#1d4ed8"/>
+<text x="1403" y="274" font-size="10" fill="#fff" font-weight="500">+ New deal</text>
+<text x="941" y="312" font-size="11" fill="#1d4ed8" font-weight="600">Active deals</text>
+<text x="1056" y="312" font-size="11" fill="#657287" font-weight="400">Won this quarter</text>
+<path d="M941 323H1492" stroke="#e4e8ed"/>
+<rect x="941" y="335" width="100.60000000000001" height="26" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="951" y="352" font-size="10" fill="#425267" font-weight="500">Owner: Anyone</text>
+<rect x="1055" y="335" width="51.0" height="26" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="1065" y="352" font-size="10" fill="#425267" font-weight="500">Board</text>
+<text x="1287" y="353" font-size="11" fill="#526174" font-weight="400">6 deals · $92,000</text>
+<rect x="941" y="377" width="166" height="188" rx="6" fill="#f4f6f9" stroke="none"/>
+<text x="951" y="397" font-size="11" fill="#17212f" font-weight="600">Qualified</text>
+<text x="951" y="414" font-size="10" fill="#657287" font-weight="400">$30,000</text>
+<rect x="948" y="426" width="152" height="58" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="957" y="443" font-size="10" fill="#17212f" font-weight="600">Orbit rollout</text>
+<text x="957" y="459" font-size="10" fill="#526174" font-weight="400">$18,000</text>
+<text x="957" y="474" font-size="9" fill="#657287" font-weight="400">Demo · Today</text>
+<rect x="948" y="491" width="152" height="58" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="957" y="508" font-size="10" fill="#17212f" font-weight="600">Pine expansion</text>
+<text x="957" y="524" font-size="10" fill="#526174" font-weight="400">$12,000</text>
+<text x="957" y="539" font-size="9" fill="#657287" font-weight="400">Call · Thu</text>
+<rect x="1119" y="377" width="166" height="188" rx="6" fill="#f4f6f9" stroke="none"/>
+<text x="1129" y="397" font-size="11" fill="#17212f" font-weight="600">Proposal</text>
+<text x="1129" y="414" font-size="10" fill="#657287" font-weight="400">$40,000</text>
+<rect x="1126" y="426" width="152" height="58" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="1135" y="443" font-size="10" fill="#17212f" font-weight="600">Acme annual</text>
+<text x="1135" y="459" font-size="10" fill="#526174" font-weight="400">$24,000</text>
+<text x="1135" y="474" font-size="9" fill="#657287" font-weight="400">Follow up · Fri</text>
+<rect x="1126" y="491" width="152" height="58" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="1135" y="508" font-size="10" fill="#17212f" font-weight="600">Atlas pilot</text>
+<text x="1135" y="524" font-size="10" fill="#526174" font-weight="400">$16,000</text>
+<text x="1135" y="539" font-size="9" fill="#657287" font-weight="400">Review · Mon</text>
+<rect x="1297" y="377" width="166" height="188" rx="6" fill="#f4f6f9" stroke="none"/>
+<text x="1307" y="397" font-size="11" fill="#17212f" font-weight="600">Negotiation</text>
+<text x="1307" y="414" font-size="10" fill="#657287" font-weight="400">$22,000</text>
+<rect x="1304" y="426" width="152" height="58" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="1313" y="443" font-size="10" fill="#17212f" font-weight="600">Meridian seats</text>
+<text x="1313" y="459" font-size="10" fill="#526174" font-weight="400">$14,000</text>
+<text x="1313" y="474" font-size="9" fill="#657287" font-weight="400">Contract · Today</text>
+<rect x="1304" y="491" width="152" height="58" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="1313" y="508" font-size="10" fill="#17212f" font-weight="600">Vale renewal</text>
+<text x="1313" y="524" font-size="10" fill="#526174" font-weight="400">$8,000</text>
+<text x="1313" y="539" font-size="9" fill="#657287" font-weight="400">Call · Tue</text>
+<text x="808" y="610" font-size="12" fill="#526174" font-weight="400">Stage meaning · owner and next action · list and move alternatives</text>
+<rect x="48" y="670" width="30" height="22" rx="5" fill="#eaf0ff" stroke="none"/>
+<text x="56" y="685" font-size="10" fill="#1d4ed8" font-weight="500">C</text>
+<text x="90" y="688" font-size="20" fill="#17212f" font-weight="600">Operations workspace</text>
+<text x="48" y="718" font-size="12" fill="#526174" font-weight="400">For spotting overdue work, prioritizing follow-ups and taking action.</text>
+<rect x="48" y="738" width="704" height="338" rx="9" fill="#fff" stroke="#d8dee7"/>
+<rect x="49" y="739" width="112" height="336" rx="8" fill="#f5f7fa" stroke="none"/>
+<path d="M161 738L161 1076" stroke="#d8dee7"/>
+<rect x="64" y="755" width="20" height="20" rx="5" fill="#17212f" stroke="none"/>
+<text x="70" y="769" font-size="11" fill="#fff" font-weight="600">N</text>
+<text x="92" y="769" font-size="11" fill="#17212f" font-weight="600">Northstar</text>
+<text x="70" y="802" font-size="10" fill="#526174" font-weight="400">Overview</text>
+<text x="70" y="836" font-size="10" fill="#526174" font-weight="400">Accounts</text>
+<text x="70" y="870" font-size="10" fill="#526174" font-weight="400">Pipeline</text>
+<rect x="58" y="886" width="92" height="28" rx="5" fill="#e5ecfb" stroke="none"/>
+<text x="70" y="904" font-size="10" fill="#1d4ed8" font-weight="600">Activities</text>
+<text x="70" y="938" font-size="10" fill="#526174" font-weight="400">Inbox</text>
+<text x="66" y="1055" font-size="10" fill="#657287" font-weight="400">Settings</text>
+<text x="181" y="772" font-size="17" fill="#17212f" font-weight="600">Follow-ups</text>
+<rect x="633" y="752" width="100" height="26" rx="5" fill="#1d4ed8" stroke="#1d4ed8"/>
+<text x="643" y="769" font-size="10" fill="#fff" font-weight="500">+ New activity</text>
+<rect x="181" y="794" width="166" height="66" rx="5" fill="#f7f8fa" stroke="none"/>
+<text x="191" y="811" font-size="10" fill="#657287" font-weight="400">Due today</text>
+<text x="191" y="833" font-size="20" fill="#17212f" font-weight="600">12</text>
+<text x="191" y="848" font-size="9" fill="#657287" font-weight="400">Assigned to the team</text>
+<rect x="359" y="794" width="166" height="66" rx="5" fill="#f7f8fa" stroke="none"/>
+<text x="369" y="811" font-size="10" fill="#657287" font-weight="400">Overdue</text>
+<text x="369" y="833" font-size="20" fill="#17212f" font-weight="600">3</text>
+<text x="369" y="848" font-size="9" fill="#657287" font-weight="400">Need follow-up</text>
+<rect x="537" y="794" width="166" height="66" rx="5" fill="#f7f8fa" stroke="none"/>
+<text x="547" y="811" font-size="10" fill="#657287" font-weight="400">Completed this week</text>
+<text x="547" y="833" font-size="20" fill="#17212f" font-weight="600">18</text>
+<text x="547" y="848" font-size="9" fill="#657287" font-weight="400">Across all owners</text>
+<rect x="181" y="874" width="84.2" height="22" rx="5" fill="#fff0e8" stroke="none"/>
+<text x="189" y="889" font-size="10" fill="#94411e" font-weight="500">Overdue · 3</text>
+<text x="296" y="889" font-size="11" fill="#526174" font-weight="400">All owners · 3 activities</text>
+<rect x="613" y="871" width="82.0" height="26" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="623" y="888" font-size="10" fill="#425267" font-weight="500">Filters  1</text>
+<text x="181" y="924" font-size="10" fill="#657287" font-weight="600">Activity / Related account</text>
+<text x="404" y="924" font-size="10" fill="#657287" font-weight="600">Due date</text>
+<text x="508" y="924" font-size="10" fill="#657287" font-weight="600">Status</text>
+<text x="624" y="924" font-size="10" fill="#657287" font-weight="600">Owner</text>
+<path d="M181 936H732" stroke="#e4e8ed"/>
+<text x="181" y="953" font-size="11" fill="#17212f" font-weight="600">Check proposal</text>
+<text x="181" y="968" font-size="10" fill="#657287" font-weight="400">Acme Studio</text>
+<text x="404" y="960" font-size="10" fill="#526174" font-weight="400">21 Oct</text>
+<rect x="508" y="947" width="59.4" height="22" rx="5" fill="#fff0e8" stroke="none"/>
+<text x="516" y="962" font-size="10" fill="#94411e" font-weight="500">Overdue</text>
+<text x="624" y="960" font-size="10" fill="#526174" font-weight="400">M. Cole</text>
+<path d="M181 979H732" stroke="#e4e8ed"/>
+<text x="181" y="996" font-size="11" fill="#17212f" font-weight="600">Arrange review</text>
+<text x="181" y="1011" font-size="10" fill="#657287" font-weight="400">Meridian Labs</text>
+<text x="404" y="1003" font-size="10" fill="#526174" font-weight="400">20 Oct</text>
+<rect x="508" y="990" width="59.4" height="22" rx="5" fill="#fff0e8" stroke="none"/>
+<text x="516" y="1005" font-size="10" fill="#94411e" font-weight="500">Overdue</text>
+<text x="624" y="1003" font-size="10" fill="#526174" font-weight="400">A. Rivera</text>
+<path d="M181 1022H732" stroke="#e4e8ed"/>
+<text x="181" y="1039" font-size="11" fill="#17212f" font-weight="600">Confirm next visit</text>
+<text x="181" y="1054" font-size="10" fill="#657287" font-weight="400">Pine &amp; Co.</text>
+<text x="404" y="1046" font-size="10" fill="#526174" font-weight="400">19 Oct</text>
+<rect x="508" y="1033" width="59.4" height="22" rx="5" fill="#fff0e8" stroke="none"/>
+<text x="516" y="1048" font-size="10" fill="#94411e" font-weight="500">Overdue</text>
+<text x="624" y="1046" font-size="10" fill="#526174" font-weight="400">J. Kim</text>
+<text x="48" y="1105" font-size="12" fill="#526174" font-weight="400">Decision-linked metrics · scoped counts · clear ownership and next action</text>
+<rect x="808" y="670" width="30" height="22" rx="5" fill="#eaf0ff" stroke="none"/>
+<text x="816" y="685" font-size="10" fill="#1d4ed8" font-weight="500">D</text>
+<text x="850" y="688" font-size="20" fill="#17212f" font-weight="600">Support workspace</text>
+<text x="808" y="718" font-size="12" fill="#526174" font-weight="400">For moving through a queue while keeping customer context close.</text>
+<rect x="808" y="738" width="704" height="338" rx="9" fill="#fff" stroke="#d8dee7"/>
+<rect x="809" y="739" width="112" height="336" rx="8" fill="#f5f7fa" stroke="none"/>
+<path d="M921 738L921 1076" stroke="#d8dee7"/>
+<rect x="824" y="755" width="20" height="20" rx="5" fill="#17212f" stroke="none"/>
+<text x="830" y="769" font-size="11" fill="#fff" font-weight="600">N</text>
+<text x="852" y="769" font-size="11" fill="#17212f" font-weight="600">Northstar</text>
+<text x="830" y="802" font-size="10" fill="#526174" font-weight="400">Overview</text>
+<text x="830" y="836" font-size="10" fill="#526174" font-weight="400">Accounts</text>
+<text x="830" y="870" font-size="10" fill="#526174" font-weight="400">Pipeline</text>
+<text x="830" y="904" font-size="10" fill="#526174" font-weight="400">Activities</text>
+<rect x="818" y="920" width="92" height="28" rx="5" fill="#e5ecfb" stroke="none"/>
+<text x="830" y="938" font-size="10" fill="#1d4ed8" font-weight="600">Inbox</text>
+<text x="826" y="1055" font-size="10" fill="#657287" font-weight="400">Settings</text>
+<text x="941" y="772" font-size="17" fill="#17212f" font-weight="600">Team inbox</text>
+<rect x="1393" y="752" width="100" height="26" rx="5" fill="#1d4ed8" stroke="#1d4ed8"/>
+<text x="1403" y="769" font-size="10" fill="#fff" font-weight="500">+ New ticket</text>
+<text x="941" y="807" font-size="11" fill="#1d4ed8" font-weight="600">Unassigned  6</text>
+<text x="1068" y="807" font-size="11" fill="#657287" font-weight="400">My tickets  8</text>
+<path d="M941 819H1492" stroke="#e4e8ed"/>
+<path d="M1131 819L1131 1065" stroke="#e4e8ed"/>
+<rect x="939" y="826" width="182" height="62" rx="5" fill="#edf2fc" stroke="none"/>
+<text x="949" y="843" font-size="10" fill="#17212f" font-weight="600">Acme Studio</text>
+<text x="949" y="861" font-size="9" fill="#526174" font-weight="400">Cannot export records</text>
+<text x="949" y="878" font-size="9" fill="#657287" font-weight="400">12m ago</text>
+<text x="949" y="912" font-size="10" fill="#17212f" font-weight="600">Pine &amp; Co.</text>
+<text x="949" y="930" font-size="9" fill="#526174" font-weight="400">Update billing contact</text>
+<text x="949" y="947" font-size="9" fill="#657287" font-weight="400">38m ago</text>
+<text x="949" y="981" font-size="10" fill="#17212f" font-weight="600">Orbit Health</text>
+<text x="949" y="999" font-size="9" fill="#526174" font-weight="400">Invite new teammate</text>
+<text x="949" y="1016" font-size="9" fill="#657287" font-weight="400">1h ago</text>
+<text x="1148" y="847" font-size="13" fill="#17212f" font-weight="600">Cannot export records</text>
+<rect x="1148" y="858" width="40.8" height="22" rx="5" fill="#eaf0ff" stroke="none"/>
+<text x="1156" y="873" font-size="10" fill="#1d4ed8" font-weight="500">Open</text>
+<text x="1212" y="873" font-size="10" fill="#657287" font-weight="400">Owner: Jamie</text>
+<path d="M1148 896H1492" stroke="#e4e8ed"/>
+<text x="1148" y="918" font-size="10" fill="#17212f" font-weight="600">Maya Chen · Acme Studio</text>
+<text x="1148" y="938" font-size="10" fill="#526174" font-weight="400">The export stops after the first page.</text>
+<text x="1148" y="955" font-size="10" fill="#526174" font-weight="400">Can you help me get the full list?</text>
+<rect x="1148" y="975" width="316" height="52" rx="5" fill="#f8f9fb" stroke="#d8dee7"/>
+<text x="1158" y="995" font-size="10" fill="#657287" font-weight="400">Reply to Maya...</text>
+<rect x="1148" y="1037" width="63.4" height="26" rx="5" fill="#fff" stroke="#d8dee7"/>
+<text x="1158" y="1054" font-size="10" fill="#425267" font-weight="500">Resolve</text>
+<rect x="1369" y="1037" width="95" height="26" rx="5" fill="#1d4ed8" stroke="#1d4ed8"/>
+<text x="1379" y="1054" font-size="10" fill="#fff" font-weight="500">Send reply</text>
+<text x="808" y="1105" font-size="12" fill="#526174" font-weight="400">Queue + detail · customer context · reply states · deliberate send</text>
+<text x="48" y="1160" font-size="11" fill="#657287" font-weight="400">Original layout studies · synthetic data · not product screenshots · dimensions and behavior must adapt to the brief</text>
+</g></svg>

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "purpose": "Forward-test CRM Craft against observable outcomes; these tasks are not a universal quality score.",
+  "tasks": [
+    {
+      "id": "sales-prototype",
+      "mode": "build",
+      "prompt": "Build a small sales CRM prototype for a bilingual French/English agency. We manage companies, contacts, opportunities and follow-ups. Start with a searchable/filterable contact list, record detail and edit flow, then next activities. Use synthetic data and local persistence. Support phones. Use one standalone index.html with CSS/JS, no external dependencies. Choose the direction and build; no questions.",
+      "expected_observations": [
+        "A concrete runnable artifact and proportionate build contract are delivered.",
+        "Combined search/filter rows, counts and pagination agree.",
+        "Record detail/edit success and failed save retain truthful state and drafts.",
+        "Saved changes survive refresh within a disclosed local-only boundary.",
+        "Contact-linked activities update and complete consistently.",
+        "French/English switching preserves application state and logical focus.",
+        "At 390 and 320 CSS pixels, identity and required controls remain reachable.",
+        "Invalid or unsupported saved data cannot be silently overwritten."
+      ]
+    },
+    {
+      "id": "recruiting-plan",
+      "mode": "plan",
+      "prompt": "Use CRM Craft to plan a recruiting CRM for our existing Vue app. We manage candidates, employers, open roles, applications and interviews. Start with application review and interview scheduling. Keep Vue, preserve our existing /candidates and /roles routes, and add application views. Two recruiters can edit at once. We have English/French users and imported legacy records. Give an implementation-ready build contract, entity relationships, query/mutation API boundaries and acceptance checks; do not implement an application.",
+      "expected_observations": [
+        "Vue and both existing routes are preserved; no application is implemented.",
+        "Candidate identity and per-role application state are distinct.",
+        "API contracts define permission scope, pagination, query/count agreement and errors.",
+        "Concurrent writes retain drafts and prevent silent overwrite.",
+        "Interview date/time and legacy unknown-data boundaries are explicit.",
+        "Acceptance scenarios distinguish proposed behavior from executed checks."
+      ]
+    },
+    {
+      "id": "legacy-audit",
+      "mode": "audit",
+      "fixture": "fixtures/legacy-crm.html",
+      "prompt": "Audit this legacy CRM prototype and give my team prioritized fixes with acceptance checks. Report findings only; preserve the source. We care about filters, editing, keyboard access and phone use.",
+      "expected_observations": [
+        "No fixture source changes.",
+        "Failed-save draft loss and false success are identified.",
+        "Count/filter/page disagreement is reproduced or cited precisely.",
+        "Accessible naming and editor focus concerns are scoped to available evidence.",
+        "Fixed-width/hidden-overflow risks are identified without invented viewport measurements.",
+        "Unescaped HTML rendering and memory-only persistence are identified.",
+        "No backend, rendered, screen-reader or security-execution tests are claimed without evidence."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "id": "sales-custom-dropdowns",
+      "mode": "polish",
+      "input": "The generated sales prototype, after its persistence/focus repair",
+      "user_feedback": "i can see poor dropdown generic dropdowns that are not custome in the demo you just did",
+      "expected_observations": [
+        "Locale, record filters, form pickers and stage fields expose custom styled controls and popups, with no visible native select popup.",
+        "The closed and open states match the existing design system and selected value is clear.",
+        "Keyboard opening/navigation/selection and Escape dismissal retain truthful value and logical focus.",
+        "Dropdowns in the record dialog appear above the modal layer and remain usable at 390 and 320 pixels.",
+        "Selections still affect filters, form data and persisted stage values; the storage regression checks still pass."
+      ]
+    }
+  ]
+}

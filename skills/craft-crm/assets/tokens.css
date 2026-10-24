@@ -1,0 +1,67 @@
+/* Original starting tokens; adapt to existing brand. Not a WCAG certificate. */
+:root {
+  --crm-canvas: #f3f4f6;
+  --crm-surface: #ffffff;
+  --crm-surface-subtle: #f8fafc;
+  --crm-text: #17212f;
+  --crm-text-muted: #526174;
+  --crm-border: #d8dee7;
+  --crm-control-border: #758396;
+  --crm-accent: #1d4ed8;
+  --crm-on-accent: #ffffff;
+  --crm-selected: #eaf1ff;
+  --crm-focus: #1d4ed8;
+  --crm-success: #166534;
+  --crm-success-bg: #ecfdf3;
+  --crm-warning: #92400e;
+  --crm-warning-bg: #fffbeb;
+  --crm-danger: #b91c1c;
+  --crm-danger-bg: #fef2f2;
+  --crm-space-1: 4px;
+  --crm-space-2: 8px;
+  --crm-space-3: 12px;
+  --crm-space-4: 16px;
+  --crm-space-6: 24px;
+  --crm-space-8: 32px;
+  --crm-radius-control: 6px;
+  --crm-radius-panel: 10px;
+  --crm-row-height: 48px;
+  --crm-control-height: 40px;
+  --crm-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --crm-text-size: 14px;
+  --crm-line-height: 1.4286;
+  --crm-duration-fast: 140ms;
+  --crm-duration-panel: 200ms;
+  --crm-ease: cubic-bezier(.2,.8,.2,1);
+  --crm-shadow-overlay: 0 10px 28px rgb(15 23 42 / 14%), 0 2px 6px rgb(15 23 42 / 8%);
+}
+[data-crm-density="compact"] {
+  --crm-row-height: 40px;
+  --crm-control-height: 34px;
+}
+[data-crm-theme="dark"] {
+  color-scheme: dark;
+  --crm-canvas: #111827;
+  --crm-surface: #182233;
+  --crm-surface-subtle: #202c3d;
+  --crm-text: #f1f5f9;
+  --crm-text-muted: #b4c0d0;
+  --crm-border: #3a485d;
+  --crm-control-border: #7b8ca5;
+  --crm-accent: #a9c8ff;
+  --crm-on-accent: #11223f;
+  --crm-selected: #263b60;
+  --crm-focus: #a9c8ff;
+  --crm-success: #9ee8ba;
+  --crm-success-bg: #143c29;
+  --crm-warning: #fbd28c;
+  --crm-warning-bg: #493316;
+  --crm-danger: #fdb3b3;
+  --crm-danger-bg: #4a232b;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --crm-duration-fast: 0ms; --crm-duration-panel: 0ms; }
+}
+/* Map tokens to native project components. Avoid global reset/overflow overrides.
+   Thin decorative borders are not control boundaries: use --crm-control-border
+   where a boundary is needed to identify a control. */

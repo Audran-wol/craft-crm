@@ -1,0 +1,18 @@
+{
+  "interface": {
+    "display_name": "CRM Craft",
+    "short_description": "Build and revamp polished, usable CRM interfaces",
+    "default_prompt": "Use $craft-crm to build or revamp a CRM with clear workflows, deliberate layouts, and verified interactions.",
+    "icon_small": "./assets/icon.svg",
+    "icon_large": "./assets/icon.svg"
+  },
+  "policy": {
+    "products": [
+      "chatgpt",
+      "codex",
+      "api",
+      "atlas"
+    ],
+    "allow_implicit_invocation": true
+  }
+}
