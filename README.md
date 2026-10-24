@@ -6,14 +6,14 @@ Use it for new CRMs, dashboard polish, filter-heavy records/search pages and sta
 
 ## A visual direction to build toward
 
-![Illustrative sales CRM dashboard with a spacious light layout, lime revenue panel, pipeline chart, follow-ups and active deals](examples/design-concepts/crm-dashboard-concept.png)
+![Before-and-after CRM design concept comparing a dense traditional dashboard with a spacious light layout and lime accents](examples/design-concepts/crm-before-after-concept.png)
 
-*AI-generated design concept with synthetic data, not a screenshot of a working app produced by the skill. This illustrates a possible visual direction; reproduction of this design in a working app has not yet been validated.*
+*AI-generated before-and-after design concept with synthetic data, not a measured result from running the skill. This illustrates a possible visual direction; reproduction of this design in a working app has not yet been validated.*
 
-To explore this direction, attach the image to your coding agent and ask:
+To explore the “after” direction, attach the image to your coding agent and ask:
 
 ```text
-Use craft-crm to build a working sales CRM using this image as visual direction.
+Use craft-crm to build a working sales CRM using the “after” panel as visual direction.
 Use a light gray canvas, rounded white surfaces, a restrained lime accent,
 generous spacing, strong metric typography and compact top navigation.
 Include pipeline value, revenue over time, follow-ups and active deals.
