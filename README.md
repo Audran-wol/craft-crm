@@ -4,6 +4,27 @@ Build, audit and polish CRM interfaces with concrete workflow contracts and evid
 
 Use it for new CRMs, dashboard polish, filter-heavy records/search pages and staged improvements to an existing app. It preserves the project's stack, routes and working behavior. It guides a coding agent; it does not install a CRM backend or certify the generated app.
 
+## A visual direction to build toward
+
+![Illustrative sales CRM dashboard with a spacious light layout, lime revenue panel, pipeline chart, follow-ups and active deals](examples/design-concepts/crm-dashboard-concept.png)
+
+*AI-generated design concept with synthetic data, not a screenshot of a working app produced by the skill. This illustrates a possible visual direction; reproduction of this design in a working app has not yet been validated.*
+
+To explore this direction, attach the image to your coding agent and ask:
+
+```text
+Use craft-crm to build a working sales CRM using this image as visual direction.
+Use a light gray canvas, rounded white surfaces, a restrained lime accent,
+generous spacing, strong metric typography and compact top navigation.
+Include pipeline value, revenue over time, follow-ups and active deals.
+Derive metrics and charts from coherent synthetic records. Connect the
+summary to working filters, record details and editing. Adapt the layout
+for mobile and verify keyboard interactions. Preserve the existing stack.
+```
+
+For an implemented example and its verification limits, see the
+[sales prototype](examples/sales/index.html) and [evaluation record](evaluations/RESULTS.md).
+
 ## Install
 
 Run from the project where you want the skill. Choose your agent:
